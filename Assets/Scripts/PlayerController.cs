@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody rb;
+    [SerializeField] GroundCheck groundCheck;
 
     [SerializeField] int moveSpeed = 1;
     [SerializeField] int jumpForce = 300;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         InputManager.onJumpStart += Jump;
+        InputManager.onJumpCancelled += StopJump;
     }
 
     // Start is called before the first frame update
@@ -35,7 +37,11 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         //Burst jump up
-        rb.AddForce(rb.transform.up * jumpForce);
+        if (groundCheck.isGrounded == true)
+        {
+            rb.AddForce(rb.transform.up * jumpForce);
+        }
+        
     }
 
     private void StopJump()
