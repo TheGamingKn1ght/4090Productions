@@ -69,6 +69,7 @@ public class InputManager : MonoBehaviour
     }
     private void Shoot(InputAction.CallbackContext ctx)
     {
+        onShootStart?.Invoke();
         OnShootInput = ctx.ReadValueAsButton();
     }
 }

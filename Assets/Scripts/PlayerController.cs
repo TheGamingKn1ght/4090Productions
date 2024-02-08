@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
+        Debug.Log("Shoot");
         RaycastHit hit;
         if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, range))
         {
