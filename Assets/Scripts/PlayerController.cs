@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Gun Stuff
+    public float damage = 10f;
+    public float range = 100f;
+    public float impactForce = 500000;
+
     Rigidbody rb;
     [SerializeField] GroundCheck groundCheck;
 
@@ -12,10 +17,15 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Transform orientationCam;
 
+
+
     private void OnEnable()
     {
         InputManager.onJumpStart += Jump;
         InputManager.onJumpCancelled += StopJump;
+
+        InputManager.onShootStart += Shoot;
+        InputManager.onShootCancelled += StopShoot;
     }
 
     // Start is called before the first frame update
@@ -26,7 +36,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         Vector3 movement;
         movement = orientationCam.transform.forward * InputManager.movementInput.y * moveSpeed + orientationCam.transform.right * InputManager.movementInput.x * moveSpeed;
@@ -45,6 +55,25 @@ public class PlayerController : MonoBehaviour
     }
 
     private void StopJump()
+    {
+
+    }
+
+    private void Shoot()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, range))
+        {
+            Debug.Log(hit.transform.name);
+            Target target = hit.transform.GetComponent<Target>();
+            if (target != null)
+            {
+                target.TakeDamage(damage);
+            }
+        }
+    }
+
+    private void StopShoot()
     {
 
     }

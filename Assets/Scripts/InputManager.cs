@@ -11,10 +11,13 @@ public class InputManager : MonoBehaviour
     public static Vector2 movementInput;
     public static Vector2 TurnInput;
     public static bool OnJumpInput;
+    public static bool OnShootInput;
 
     public static event Action onJumpStart;
     public static event Action onJumpCancelled;
 
+    public static event Action onShootStart;
+    public static event Action onShootCancelled;
 
     private void Awake()
     {
@@ -32,6 +35,9 @@ public class InputManager : MonoBehaviour
         controls.Player.Jump.performed += ctx => onJumpStart.Invoke();
         controls.Player.Jump.canceled += ctx => onJumpCancelled.Invoke();
 
+        controls.Player.Shoot.performed += Shoot;
+        controls.Player.Shoot.canceled += Shoot;
+
         controls.Player.Enable();
     }
     void OnDisable()
@@ -44,6 +50,9 @@ public class InputManager : MonoBehaviour
 
         controls.Player.Jump.performed -= Jump;
         controls.Player.Jump.canceled -= Jump;
+
+        controls.Player.Shoot.performed -= Shoot;
+        controls.Player.Shoot.canceled -= Shoot;
     }
 
     private void Move(InputAction.CallbackContext ctx)
@@ -57,5 +66,9 @@ public class InputManager : MonoBehaviour
     private void Jump(InputAction.CallbackContext ctx)
     {
         OnJumpInput = ctx.ReadValueAsButton();
+    }
+    private void Shoot(InputAction.CallbackContext ctx)
+    {
+        OnShootInput = ctx.ReadValueAsButton();
     }
 }
