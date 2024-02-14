@@ -17,7 +17,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Transform orientationCam;
 
-
+    [SerializeField] GameObject Pistol;
+    [SerializeField] GameObject Sword;
+    Animator anim; 
 
     private void OnEnable()
     {
@@ -61,6 +63,7 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
+        
         Debug.Log("Shoot");
         RaycastHit hit;
         if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, range))
