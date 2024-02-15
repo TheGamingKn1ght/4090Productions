@@ -78,8 +78,9 @@ public class PlayerController : MonoBehaviour
             }
         }
         */
-        Animator anim = Sword.GetComponent<Animator>();
-        anim.SetTrigger("Attack");
+        //Animator anim = Sword.GetComponent<Animator>();
+        //anim.SetTrigger("Attack");
+        Sword.GetComponent<Animator>().Play("Crowbar-Attack");
 
     }
 

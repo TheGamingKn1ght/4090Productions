@@ -1772,6 +1772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crowbar
       objectReference: {fileID: 0}
+    - target: {fileID: 6977292323058788196, guid: cbec1a828df12f547ab47361110ad7e6, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7364289059378756702, guid: cbec1a828df12f547ab47361110ad7e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5298443
