@@ -6,15 +6,15 @@ using System;
 
 public class InputManager : MonoBehaviour
 {
-    PlayerControls controls;
+    public static PlayerControls controls;
 
     public static Vector2 movementInput;
     public static Vector2 TurnInput;
-    public static float ScrollInput;
 
     public static event System.Action OnJumpInput;
     public static event System.Action OnShootInput;
     public static event System.Action OnInteractInput;
+    public static event System.Action OnScrollInput;
 
     private void Awake()
     {
@@ -31,10 +31,8 @@ public class InputManager : MonoBehaviour
 
         controls.Player.Jump.performed += ctx => OnJumpInput?.Invoke();
         controls.Player.Shoot.performed += ctx => OnShootInput?.Invoke();
+        controls.Player.Scroll.performed += ctx => OnScrollInput?.Invoke();
         controls.Player.Interact.performed += ctx => OnInteractInput?.Invoke();
-
-        controls.Player.Scroll.performed += Scroll;
-        controls.Player.Scroll.canceled += Scroll;
 
         controls.Player.Enable();
     }
@@ -45,9 +43,6 @@ public class InputManager : MonoBehaviour
 
         controls.Player.Turn.performed -= Turn;
         controls.Player.Turn.canceled -= Turn;
-
-        controls.Player.Scroll.performed -= Scroll;
-        controls.Player.Scroll.canceled -= Scroll;
     }
 
     private void Move(InputAction.CallbackContext ctx)
@@ -57,10 +52,5 @@ public class InputManager : MonoBehaviour
     private void Turn(InputAction.CallbackContext ctx)
     {
         TurnInput = ctx.ReadValue<Vector2>();
-    }
-   
-    private void Scroll(InputAction.CallbackContext ctx)
-    {
-        ScrollInput = ctx.ReadValue<float>();
     }
 }

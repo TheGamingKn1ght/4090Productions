@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         InputManager.OnJumpInput += () => Jump();
         InputManager.OnShootInput += () => Shoot();
+        InputManager.OnScrollInput += () => Scroll();
     }
 
     // Start is called before the first frame update
@@ -72,11 +73,19 @@ public class PlayerController : MonoBehaviour
         
         Sword.GetComponent<Animator>().Play("Crowbar-Attack");
 
-    
     }
     private void Scroll()
     {
-        Debug.Log("Scroll" + InputManager.ScrollInput);
+        if (InputManager.controls.Player.Scroll.ReadValue<float>() >= 1)
+        {
+            Pistol.SetActive(true);
+            Sword.SetActive(false);
+        }
+        else if (InputManager.controls.Player.Scroll.ReadValue<float>() <= -1)
+        {
+            Pistol.SetActive(false);
+            Sword.SetActive(true); ;
+        }
     }
 
 }
