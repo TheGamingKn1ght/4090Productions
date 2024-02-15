@@ -1021,6 +1021,8 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 300
   orientationCam: {fileID: 963194228}
+  Pistol: {fileID: 2139025795}
+  Sword: {fileID: 703819675790536188}
 --- !u!54 &843097794
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1753,6 +1755,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 251493946207959433, guid: 1c306e2956f8cc146bda9902f9c7af0e, type: 3}
+--- !u!1 &2139025795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2738520558268228719, guid: 748d19574625db444877ca05561b6aea, type: 3}
+  m_PrefabInstance: {fileID: 463874736}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &206223627761520582
 PrefabInstance:
   m_ObjectHideFlags: 0
