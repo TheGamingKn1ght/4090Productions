@@ -1942,6 +1942,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 649915755}
     m_Modifications:
+    - target: {fileID: 172759282262528064, guid: cbec1a828df12f547ab47361110ad7e6, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6280496705917041779, guid: cbec1a828df12f547ab47361110ad7e6, type: 3}
       propertyPath: m_Name
       value: Crowbar
