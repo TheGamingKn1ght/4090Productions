@@ -17,9 +17,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Transform orientationCam;
 
-    [SerializeField] GameObject Pistol;
-    [SerializeField] GameObject Sword;
-    Animator anim; 
+    public GameObject Pistol;
+    public GameObject Sword;
 
     private void OnEnable()
     {
@@ -63,18 +62,25 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
-        
-        Debug.Log("Shoot");
-        RaycastHit hit;
-        if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, range))
+        /*
+        if(Pistol != null)
         {
-            Debug.Log(hit.transform.name);
-            Target target = hit.transform.GetComponent<Target>();
-            if (target != null)
+            Debug.Log("Shoot");
+            RaycastHit hit;
+            if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, range))
             {
-                target.TakeDamage(damage);
+                Debug.Log(hit.transform.name);
+                Target target = hit.transform.GetComponent<Target>();
+                if (target != null)
+                {
+                    target.TakeDamage(damage);
+                }
             }
         }
+        */
+        Animator anim = Sword.GetComponent<Animator>();
+        anim.SetTrigger("Attack");
+
     }
 
     private void StopShoot()
