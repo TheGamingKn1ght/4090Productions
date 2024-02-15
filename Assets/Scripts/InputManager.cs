@@ -10,14 +10,11 @@ public class InputManager : MonoBehaviour
 
     public static Vector2 movementInput;
     public static Vector2 TurnInput;
-    public static bool OnJumpInput;
-    public static bool OnShootInput;
+    public static float ScrollInput;
 
-    public static event Action onJumpStart;
-    public static event Action onJumpCancelled;
-
-    public static event Action onShootStart;
-    public static event Action onShootCancelled;
+    public static event System.Action OnJumpInput;
+    public static event System.Action OnShootInput;
+    public static event System.Action OnInteractInput;
 
     private void Awake()
     {
@@ -32,11 +29,12 @@ public class InputManager : MonoBehaviour
         controls.Player.Turn.performed += Turn;
         controls.Player.Turn.canceled += Turn;
 
-        controls.Player.Jump.performed += ctx => onJumpStart.Invoke();
-        controls.Player.Jump.canceled += ctx => onJumpCancelled.Invoke();
+        controls.Player.Jump.performed += ctx => OnJumpInput?.Invoke();
+        controls.Player.Shoot.performed += ctx => OnShootInput?.Invoke();
+        controls.Player.Interact.performed += ctx => OnInteractInput?.Invoke();
 
-        controls.Player.Shoot.performed += Shoot;
-        controls.Player.Shoot.canceled += Shoot;
+        controls.Player.Scroll.performed += Scroll;
+        controls.Player.Scroll.canceled += Scroll;
 
         controls.Player.Enable();
     }
@@ -48,11 +46,8 @@ public class InputManager : MonoBehaviour
         controls.Player.Turn.performed -= Turn;
         controls.Player.Turn.canceled -= Turn;
 
-        controls.Player.Jump.performed -= Jump;
-        controls.Player.Jump.canceled -= Jump;
-
-        controls.Player.Shoot.performed -= Shoot;
-        controls.Player.Shoot.canceled -= Shoot;
+        controls.Player.Scroll.performed -= Scroll;
+        controls.Player.Scroll.canceled -= Scroll;
     }
 
     private void Move(InputAction.CallbackContext ctx)
@@ -63,13 +58,9 @@ public class InputManager : MonoBehaviour
     {
         TurnInput = ctx.ReadValue<Vector2>();
     }
-    private void Jump(InputAction.CallbackContext ctx)
+   
+    private void Scroll(InputAction.CallbackContext ctx)
     {
-        OnJumpInput = ctx.ReadValueAsButton();
-    }
-    private void Shoot(InputAction.CallbackContext ctx)
-    {
-        onShootStart?.Invoke();
-        OnShootInput = ctx.ReadValueAsButton();
+        ScrollInput = ctx.ReadValue<float>();
     }
 }

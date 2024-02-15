@@ -22,11 +22,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        InputManager.onJumpStart += Jump;
-        InputManager.onJumpCancelled += StopJump;
-
-        InputManager.onShootStart += Shoot;
-        InputManager.onShootCancelled += StopShoot;
+        InputManager.OnJumpInput += () => Jump();
+        InputManager.OnShootInput += () => Shoot();
     }
 
     // Start is called before the first frame update
@@ -55,14 +52,9 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void StopJump()
-    {
-
-    }
-
     private void Shoot()
     {
-        /*
+        
         if(Pistol != null)
         {
             Debug.Log("Shoot");
@@ -77,15 +69,14 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        */
-        //Animator anim = Sword.GetComponent<Animator>();
-        //anim.SetTrigger("Attack");
+        
         Sword.GetComponent<Animator>().Play("Crowbar-Attack");
 
+    
     }
-
-    private void StopShoot()
+    private void Scroll()
     {
-
+        Debug.Log("Scroll" + InputManager.ScrollInput);
     }
+
 }
