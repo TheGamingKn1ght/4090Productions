@@ -24,5 +24,6 @@ public class Collectible : AbstractInteractable
         }
      
         this.gameObject.SetActive(false);
+        
     }
 }
