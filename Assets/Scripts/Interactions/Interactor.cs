@@ -7,6 +7,9 @@ public class Interactor : MonoBehaviour
     private Iinteractable _currentInteractable;
     [SerializeField] private float rayCastDistance = 5f;
     [SerializeField] Transform orientationCam;
+    
+    //public string tag;
+    public static RaycastHit hit;
 
     private void OnEnable()
     {
@@ -21,7 +24,6 @@ public class Interactor : MonoBehaviour
 
     private void RaycastTarget()
     {
-        RaycastHit hit;
         if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, rayCastDistance))
         {
             Iinteractable interactable = hit.collider.GetComponent<Iinteractable>();

@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
     public static event System.Action OnShootInput;
     public static event System.Action OnInteractInput;
     public static event System.Action OnScrollInput;
+    public static event System.Action OnInventoryInput;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class InputManager : MonoBehaviour
         controls.Player.Shoot.performed += ctx => OnShootInput?.Invoke();
         controls.Player.Scroll.performed += ctx => OnScrollInput?.Invoke();
         controls.Player.Interact.performed += ctx => OnInteractInput?.Invoke();
+        controls.Player.ToggleInventory.performed += ctx => OnInventoryInput?.Invoke();
 
         controls.Player.Enable();
     }
