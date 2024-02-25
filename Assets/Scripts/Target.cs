@@ -4,20 +4,26 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    public float health = 50;
-
-    public void TakeDamage(float amount)
+    public float impactForce = 500;
+    public void TakeDamage(RaycastHit info, Transform camPos)
     {
-        health -= amount;
-        if (health <= 0)
+        if (info.collider.CompareTag("Enemy") == true)
         {
-            Death();
+            Death(info);
         }
+        else
+        {
+            Vector3 direction = info.transform.position - camPos.transform.position;
+            info.rigidbody.AddForce(direction * impactForce);
+        }
+        
     }
 
-
-    public void Death()
+    public void Death(RaycastHit character)
     {
-        Destroy(gameObject);
+        character.transform.Rotate(-Vector3.right,90);
+        //character.transform.Translate(Vector3.up);
     }
+
+
 }

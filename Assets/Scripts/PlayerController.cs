@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         InputManager.OnJumpInput += () => Jump();
-        InputManager.OnShootInput += () => Shoot();
+        InputManager.OnShootInput += () => Attack();
         InputManager.OnScrollInput += () => Scroll();
     }
 
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         
     }
     
-    private void Shoot()
+    private void Attack()
     {
         if (Pistol.activeSelf)
         {
@@ -63,11 +63,11 @@ public class PlayerController : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, range))
                 {
-                    Debug.Log(hit.transform.name);
+                    Debug.Log(hit.collider.CompareTag("Enemy"));
                     Target target = hit.transform.GetComponent<Target>();
                     if (target != null)
                     {
-                        target.TakeDamage(damage);
+                        target.TakeDamage(hit, orientationCam);
                     }
                 }
             }
