@@ -9,7 +9,7 @@ public class Target : MonoBehaviour
     public float impactForce = 500;
     public void TakeDamage(RaycastHit info, Transform camPos)
     {
-        if (info.collider.CompareTag("Enemy") == true)
+        if (info.rigidbody.CompareTag("Enemy") == true)
         {
             Death(info);
         }
