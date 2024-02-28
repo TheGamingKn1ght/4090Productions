@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Target : MonoBehaviour
 {
+    [SerializeField] private NavMeshAgent agent;
     public float impactForce = 500;
     public void TakeDamage(RaycastHit info, Transform camPos)
     {
@@ -21,6 +23,7 @@ public class Target : MonoBehaviour
 
     public void Death(RaycastHit character)
     {
+        agent.GetComponent<NavMeshAgent>().enabled = false;
         character.transform.Rotate(-Vector3.right,90);
         //character.transform.Translate(Vector3.up);
     }

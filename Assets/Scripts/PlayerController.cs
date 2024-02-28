@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
                     Target target = hit.transform.GetComponent<Target>();
                     if (target != null)
                     {
+                        Debug.Log("Yay");
                         target.TakeDamage(hit, orientationCam);
                     }
                 }

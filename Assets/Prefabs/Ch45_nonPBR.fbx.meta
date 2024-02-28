@@ -3,32 +3,7 @@ guid: 8925a62232aa01c4cb41e9134e1aaffd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch45_1001_Diffuse
-    second: {fileID: 2800000, guid: ef435bdd453fbf247b59bc48eb11f058, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch45_1001_Emissive
-    second: {fileID: 2800000, guid: 271ac43a00e2291459c39f71d05ab1f1, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch45_1001_Glossiness
-    second: {fileID: 2800000, guid: d425753ae0687d1429d8c4ea9e415788, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch45_1001_Normal
-    second: {fileID: 2800000, guid: 17fa83b27c17fa14e83438865294370d, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch45_1001_Specular
-    second: {fileID: 2800000, guid: 397436720773fbd4891020c519b2db68, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
