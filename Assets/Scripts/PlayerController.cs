@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //Gun Stuff
-    public float damage = 10f;
-    public float range = 100f;
-    public float impactForce = 500000;
+    //Weapon Ranges
+    public float gunRange = 100f;
+    public float meleeRange = 10f;
 
     Rigidbody rb;
     [SerializeField] GroundCheck groundCheck;
@@ -18,7 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform orientationCam;
 
     public GameObject Pistol;
-    public GameObject Sword;
+    public GameObject Crowbar;
 
     private void OnEnable()
     {
@@ -61,7 +60,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Shoot");
                 RaycastHit hit;
-                if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, range))
+                if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, gunRange))
                 {
                     Debug.Log(hit.collider.CompareTag("Enemy"));
                     Target target = hit.transform.GetComponent<Target>();
@@ -75,7 +74,22 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Sword.GetComponent<Animator>().Play("Crowbar-Attack");
+            if (Crowbar.activeSelf)
+            {
+                Crowbar.GetComponent<Animator>().Play("Crowbar-Attack");
+                Debug.Log("Crowbar");
+                RaycastHit hit;
+                if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, meleeRange))
+                {
+                    Debug.Log(hit.collider.CompareTag("Enemy"));
+                    Target target = hit.transform.GetComponent<Target>();
+                    if (target != null)
+                    {
+                        target.TakeDamage(hit, orientationCam);
+                    }
+                }
+            }
+            
         }
        
     }
@@ -84,12 +98,12 @@ public class PlayerController : MonoBehaviour
         if (InputManager.controls.Player.Scroll.ReadValue<float>() >= 1)
         {
             Pistol.SetActive(true);
-            Sword.SetActive(false);
+            Crowbar.SetActive(false);
         }
         else if (InputManager.controls.Player.Scroll.ReadValue<float>() <= -1)
         {
             Pistol.SetActive(false);
-            Sword.SetActive(true); ;
+            Crowbar.SetActive(true); ;
         }
     }
 

@@ -10,7 +10,7 @@ public class NavMeshTracking : MonoBehaviour
 
     private void Update()
     {
-        if(agent.GetComponent<NavMeshAgent>() != null)
+        if(agent.GetComponent<NavMeshAgent>().isActiveAndEnabled)
         {
             agent.SetDestination(player.transform.position);
         }
