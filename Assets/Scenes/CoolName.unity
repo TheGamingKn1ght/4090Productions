@@ -8009,6 +8009,9 @@ PrefabInstance:
       addedObject: {fileID: 2105143017}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8925a62232aa01c4cb41e9134e1aaffd, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 2105143021}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8925a62232aa01c4cb41e9134e1aaffd, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 2105143016}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8925a62232aa01c4cb41e9134e1aaffd, type: 3}
       insertIndex: -1
@@ -8402,7 +8405,7 @@ Transform:
   m_GameObject: {fileID: 1220006646}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.15, y: 32.120003, z: 148.43}
+  m_LocalPosition: {x: 21.15, y: 34.838, z: 148.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12879,8 +12882,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.38294315
-  m_Height: 2.043127
+  m_Radius: 2.66
+  m_Height: 2.34
   m_Direction: 1
   m_Center: {x: 0.022269249, y: 0.9084425, z: 0}
 --- !u!114 &2105143019
@@ -12919,6 +12922,33 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!54 &2105143021
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105143014}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2105161558 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1998131547146259539, guid: f2cd5bc36f9085341a1d340103a98718, type: 3}
