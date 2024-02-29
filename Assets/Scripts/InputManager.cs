@@ -34,8 +34,9 @@ public class InputManager : MonoBehaviour
         controls.Player.Shoot.performed += ctx => OnShootInput?.Invoke();
         controls.Player.Scroll.performed += ctx => OnScrollInput?.Invoke();
         controls.Player.Interact.performed += ctx => OnInteractInput?.Invoke();
-        controls.Player.ToggleInventory.performed += ctx => OnInventoryInput?.Invoke();
 
+        controls.Player.ToggleInventory.performed += ctx => OnInventoryInput?.Invoke();
+        
         controls.Player.Enable();
     }
     void OnDisable()

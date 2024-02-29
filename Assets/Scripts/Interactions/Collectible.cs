@@ -5,7 +5,7 @@ using TMPro;
 
 public class Collectible : AbstractInteractable
 {
-    public TextMeshProUGUI fuelCounter;
+    public TextMeshProUGUI Counter;
     
     public override void Interact()
     {
@@ -18,7 +18,12 @@ public class Collectible : AbstractInteractable
         {
             case ("FuelCan") :
                 PlayerInventory.fuelCount++;
-                fuelCounter.text = PlayerInventory.fuelCount.ToString();
+                Counter.text = PlayerInventory.fuelCount.ToString();
+                Debug.Log(Interactor.hit.collider.gameObject.tag.ToString());
+                break;
+            case ("Coin") :
+                PlayerInventory.coinCount++;
+                Counter.text = PlayerInventory.coinCount.ToString();    
                 Debug.Log(Interactor.hit.collider.gameObject.tag.ToString());
                 break;
         }

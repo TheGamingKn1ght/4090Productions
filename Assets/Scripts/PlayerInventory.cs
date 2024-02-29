@@ -10,9 +10,13 @@ public class PlayerInventory : MonoBehaviour
         InputManager.OnInventoryInput += ToggleInventory;
     }
     
-    public static int fuelCount;
     public GameObject InvPanel;
+    public static int fuelCount;
+    public static int coinCount;
+    public static int GFCount;
     public TextMeshProUGUI fuelCounter;
+    public TextMeshProUGUI coinCounter;
+    public TextMeshProUGUI GFCounter;
 
     public void ToggleInventory()
     {
@@ -20,5 +24,12 @@ public class PlayerInventory : MonoBehaviour
         {
             InvPanel.SetActive(!InvPanel.activeSelf);
         }
+    }
+
+    void Update()
+    {
+        fuelCounter.text = fuelCount.ToString();
+        coinCounter.text = coinCount.ToString();
+        GFCounter.text = GFCount.ToString();
     }
 }
