@@ -70,7 +70,8 @@ public class NavMeshTracking : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             CanSeePlayer = false;
-            //Recommence the Rnaodm pathfinding after leaving chase state
+            //Recommence the Random pathfinding after leaving chase state
+            //Would like to do this differently
             stateMachine.changeState(new PatrolState(this, finalPosition));
         }
     }
