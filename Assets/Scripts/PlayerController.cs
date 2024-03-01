@@ -62,11 +62,11 @@ public class PlayerController : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, gunRange))
                 {
-                    Target target = hit.transform.GetComponent<Target>();
-                    if (target != null)
+                    Enemy enemy = hit.transform.GetComponent<Enemy>();
+                    if (enemy != null)
                     {
                         Debug.Log("Yay");
-                        target.TakeDamage(hit, orientationCam);
+                        enemy.TakeDamage(hit, orientationCam);
                     }
                 }
             }
@@ -80,11 +80,10 @@ public class PlayerController : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, meleeRange))
                 {
-                    Debug.Log(hit.rigidbody.CompareTag("Enemy"));
-                    Target target = hit.transform.GetComponent<Target>();
-                    if (target != null)
+                    Enemy enemy = hit.transform.GetComponent<Enemy>();
+                    if (enemy != null)
                     {
-                        target.TakeDamage(hit, orientationCam);
+                        enemy.TakeDamage(hit, orientationCam);
                     }
                 }
             }

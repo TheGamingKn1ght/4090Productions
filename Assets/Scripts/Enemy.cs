@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Target : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
     public float impactForce = 500;
