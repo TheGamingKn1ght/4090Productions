@@ -15,12 +15,13 @@ public class ChaseState : IState
     public void Enter()
     {
         Debug.Log("Animation Chasing");
+        aiController.agent.speed = 3;
     }
 
     public void Execute()
     {
         //Chasing code
-        if (aiController.agent.GetComponent<NavMeshAgent>().isActiveAndEnabled && NavMeshTracking.CanSeePlayer)
+        if (aiController.agent.GetComponent<NavMeshAgent>().isActiveAndEnabled && aiController.CanSeePlayer)
         {
             aiController.agent.SetDestination(aiController.target.transform.position);
         }

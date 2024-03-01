@@ -5,26 +5,32 @@ using UnityEngine;
 public class PatrolState : IState
 {
     private NavMeshTracking aiController;
+    private Vector3 patrolPoint;
 
-    public PatrolState(NavMeshTracking aiController)
+    public PatrolState(NavMeshTracking aiController, Vector3 patrolPoint)
     {
         this.aiController = aiController;
+        this.patrolPoint = patrolPoint;
     }
 
     public void Enter()
     {
         Debug.Log("Animation Patrolling");
+        aiController.agent.speed = 1;
     }
 
     public void Execute()
     {
-        aiController.agent.SetDestination(aiController.finalPosition);
         /*
         foreach(Vector3 waypoint in aiController.waypoints)
         {
-            aiController.agent.SetDestination(waypoint);
+            if(aiController.agent.transform.position != aiController.finalPosition)
+            {
+                aiController.agent.SetDestination(aiController.finalPosition);
+            }
         }
         */
+        aiController.agent.SetDestination(patrolPoint);
     }
 
     public void Exit()

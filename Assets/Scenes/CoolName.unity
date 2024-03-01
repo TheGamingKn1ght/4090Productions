@@ -15225,7 +15225,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 2105143020}
-  player: {fileID: 843097792}
+  target: {fileID: 843097792}
+  maxWalkRadius: 10
+  waypoint: {x: 0, y: 0, z: 0}
+  finalPosition: {x: 0, y: 0, z: 0}
+  CanSeePlayer: 0
 --- !u!195 &2105143020
 NavMeshAgent:
   m_ObjectHideFlags: 0

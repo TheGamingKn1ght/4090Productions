@@ -11,16 +11,16 @@ public class NavMeshTracking : MonoBehaviour
     
     
     private StateMachine stateMachine;
-    public Vector3 waypoints;// = new Vector3[5];
+    public Vector3 waypoint;
     public Vector3 finalPosition;
-    public static bool CanSeePlayer;
+    public bool CanSeePlayer;
     
 
     public void Start()
     {
         stateMachine = new StateMachine();
-        GetWaypoints();
-        stateMachine.changeState(new PatrolState(this));
+        finalPosition = GetWaypoint();
+        stateMachine.changeState(new PatrolState(this,finalPosition));
 
         agent.velocity = Vector3.zero;
     }
@@ -38,21 +38,21 @@ public class NavMeshTracking : MonoBehaviour
             //if close enough, attack state
         }
 
-        if (CanSeePlayer)
+        if (CanSeePlayer == true)
         {
             stateMachine.changeState(new ChaseState(this));
         }
         else
         {
-            /*
-            for(int i=0; i <5; i++)
+            if(transform.position == finalPosition)
             {
-                waypoints = Random.insideUnitSphere * maxWalkRadius;
+                finalPosition = GetWaypoint();
+                stateMachine.changeState(new PatrolState(this, finalPosition));
             }
-            */
-
-            Debug.Log(waypoints);
-            stateMachine.changeState(new PatrolState(this));
+            else
+            {
+                //stateMachine.currentState.Execute();
+            }
         }
     }
 
@@ -65,18 +65,39 @@ public class NavMeshTracking : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            CanSeePlayer = false;
+            //stateMachine.changeState(new PatrolState(this, finalPosition));
+        }
+    }
+
     public void SetDestination(Vector3 destination)
     {
         agent.SetDestination(destination);
     }
 
 
-    public void GetWaypoints()
+    public Vector3 GetWaypoint()
     {
-        waypoints = Random.insideUnitSphere * maxWalkRadius;
-        waypoints += transform.position;
+        
+        waypoint = Random.insideUnitSphere * maxWalkRadius;
+        waypoint += transform.position;
         NavMeshHit hit;
-        NavMesh.SamplePosition(waypoints, out hit, maxWalkRadius, 1);
-        finalPosition = hit.position;
+        NavMesh.SamplePosition(waypoint, out hit, maxWalkRadius, 1);
+        return hit.position;
+        /*
+        for (int i = 0; i < 5; i++)
+        {
+            Vector3 randomDirection = Random.insideUnitSphere * maxWalkRadius;
+            waypoints[i] = randomDirection;
+            waypoints[i] += transform.position;
+            NavMeshHit hit;
+            NavMesh.SamplePosition(waypoints[i], out hit, maxWalkRadius, 1);
+            finalPosition = hit.position;
+        }
+        */
     }
 }
