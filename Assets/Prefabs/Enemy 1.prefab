@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8925a62232aa01c4cb41e9134e1aaffd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.056362
+      value: 18.987942
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8925a62232aa01c4cb41e9134e1aaffd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 31.059492
+      value: 31.05949
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8925a62232aa01c4cb41e9134e1aaffd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 155.102
+      value: 155.32077
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8925a62232aa01c4cb41e9134e1aaffd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1109599729843853316}
-  impactForce: 500
+  impactForce: 501
 --- !u!195 &1109599729843853316
 NavMeshAgent:
   m_ObjectHideFlags: 0
