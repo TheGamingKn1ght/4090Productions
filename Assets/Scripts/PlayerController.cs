@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Pistol != null)
             {
-                Debug.Log("Shoot");
+                AudioManager.Singleton.PlaySoundEffect("Pistol Shot");
                 RaycastHit hit;
                 if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, gunRange))
                 {

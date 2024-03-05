@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            //AudioManager.Singleton.PlaySoundEffect("Riccochet");
             Vector3 direction = info.transform.position - camPos.transform.position;
             info.rigidbody.AddForce(direction * impactForce);
         }
