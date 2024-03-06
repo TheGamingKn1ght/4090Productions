@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
             if (Crowbar.activeSelf)
             {
                 Crowbar.GetComponent<Animator>().Play("Crowbar-Attack");
+                AudioManager.Singleton.PlaySoundEffect("Crowbar");
                 Debug.Log("Crowbar");
                 RaycastHit hit;
                 if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, meleeRange))

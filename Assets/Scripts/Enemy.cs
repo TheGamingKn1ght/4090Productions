@@ -6,7 +6,9 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
+    [SerializeField] private float damage = 25;
     public float impactForce = 500;
+
     public void TakeDamage(RaycastHit info, Transform camPos)
     {
         if (info.rigidbody.CompareTag("Enemy") == true)
@@ -20,6 +22,16 @@ public class Enemy : MonoBehaviour
             info.rigidbody.AddForce(direction * impactForce);
         }
         
+    }
+
+    public void DealDamage(Transform camPos)
+    {
+        HealthBar.health += damage;
+        RaycastHit hit;
+        if(Physics.Raycast(camPos.transform.position, camPos.transform.forward, out hit, 2))
+        {
+            HealthBar.health += damage;
+        }
     }
 
     public void Death(RaycastHit character)
