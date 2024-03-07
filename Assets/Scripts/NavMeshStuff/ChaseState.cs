@@ -23,7 +23,10 @@ public class ChaseState : IState
         //Chasing code
         if (aiController.agent.GetComponent<NavMeshAgent>().isActiveAndEnabled && aiController.CanSeePlayer)
         {
+            //Chasing
             aiController.agent.SetDestination(aiController.target.transform.position);
+            //Attacking
+            aiController.agent.GetComponent<Enemy>().DealDamage(aiController.enemyEyes, aiController.target);
         }
     }
 

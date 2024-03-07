@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class NavMeshTracking : MonoBehaviour
 {
     [SerializeField] public NavMeshAgent agent;
-    [SerializeField] private Transform enemyEyes;
+    [SerializeField] public Transform enemyEyes;
     [SerializeField] public Transform target;
     [SerializeField] private int maxWalkRadius = 10;
     
@@ -36,7 +36,7 @@ public class NavMeshTracking : MonoBehaviour
     {
         if(stateMachine.currentState is ChaseState)
         {
-            agent.GetComponent<Enemy>().DealDamage(enemyEyes);
+            
         }
 
         if (CanSeePlayer == true)

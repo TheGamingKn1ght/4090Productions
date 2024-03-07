@@ -5,8 +5,15 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Agent Properties")]
     [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private float damage = 25;
+    [SerializeField] private float damage;
+
+    [Header("Attack Properties")]
+    [SerializeField] private float AttackWaitTime; 
+    private float currentAttackWaitTime = 0f;
+    private bool isWaiting;
+
     public float impactForce = 500;
 
     public void TakeDamage(RaycastHit info, Transform camPos)
@@ -24,14 +31,34 @@ public class Enemy : MonoBehaviour
         
     }
 
-    public void DealDamage(Transform camPos)
+    public void DealDamage(Transform camPos, Transform player)
     {
-        HealthBar.health += damage;
-        RaycastHit hit;
-        if(Physics.Raycast(camPos.transform.position, camPos.transform.forward, out hit, 2))
+        if (isWaiting)
         {
-            HealthBar.health += damage;
+            currentAttackWaitTime += Time.deltaTime;
+            if(currentAttackWaitTime >= AttackWaitTime)
+            {
+                isWaiting = false;
+                currentAttackWaitTime = 0f;
+            }
         }
+        else
+        {
+            if(HealthBar.health > 0)
+            {
+                AudioManager.Singleton.PlaySoundEffect("Oof");
+                HealthBar.health -= damage;
+                isWaiting = true;
+            }
+            
+        }
+        /*
+        RaycastHit hit;
+        if(Physics.Raycast(camPos.transform.position, player.transform.position, out hit, 2))
+        {
+            
+        }
+        */
     }
 
     public void Death(RaycastHit character)
