@@ -11,10 +11,12 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     [SerializeField] GroundCheck groundCheck;
 
-    [SerializeField] int moveSpeed = 1;
+    [SerializeField] private int moveSpeed = 1;
     [SerializeField] int jumpForce = 300;
 
     [SerializeField] Transform orientationCam;
+
+    private int counter = 0;
 
     public GameObject Pistol;
     public GameObject Crowbar;
@@ -24,6 +26,8 @@ public class PlayerController : MonoBehaviour
         InputManager.OnJumpInput += () => Jump();
         InputManager.OnShootInput += () => Attack();
         InputManager.OnScrollInput += () => Scroll();
+        InputManager.OnHealInput += () => Heal();
+        InputManager.OnSpeedInput += () => Speed();
     }
 
     // Start is called before the first frame update
@@ -104,6 +108,37 @@ public class PlayerController : MonoBehaviour
             Pistol.SetActive(false);
             Crowbar.SetActive(true); ;
         }
+    }
+
+    private void Heal()
+    {
+        if (PlayerInventory.HPCount > 0)
+        {
+            HealthBar.health += 25;
+
+            if (HealthBar.health >= 100f)
+            {
+                HealthBar.health = 100f;
+            }
+
+            PlayerInventory.HPCount--;
+        }
+    }
+
+    private void Speed()
+    {
+        if (PlayerInventory.SPCount > 0)
+        {
+            PlayerInventory.SPCount--;
+            StartCoroutine(SpeedBoostCoroutine());
+        }
+    }
+
+    IEnumerator SpeedBoostCoroutine()
+    {
+        moveSpeed = 12;
+        yield return new WaitForSeconds(5f);
+        moveSpeed = 5;
     }
 
 }

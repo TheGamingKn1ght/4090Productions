@@ -14,16 +14,22 @@ public class Collectible : AbstractInteractable
     
     public void Collect()
     {
+        
         switch (Interactor.hit.collider.gameObject.tag)
         {
-            case ("FuelCan") :
-                PlayerInventory.fuelCount++;
-                Counter.text = PlayerInventory.fuelCount.ToString();
+            case ("Berry") :
+                PlayerInventory.berryCount++;
+                Counter.text = PlayerInventory.berryCount.ToString();
                 Debug.Log(Interactor.hit.collider.gameObject.tag.ToString());
                 break;
-            case ("Coin") :
-                PlayerInventory.coinCount++;
-                Counter.text = PlayerInventory.coinCount.ToString();    
+            case ("Honey") :
+                PlayerInventory.honeyCount++;
+                Counter.text = PlayerInventory.honeyCount.ToString();    
+                Debug.Log(Interactor.hit.collider.gameObject.tag.ToString());
+                break;
+            case ("Fuel") :
+                PlayerInventory.fuelCount++;
+                Counter.text = PlayerInventory.fuelCount.ToString();    
                 Debug.Log(Interactor.hit.collider.gameObject.tag.ToString());
                 break;
         }

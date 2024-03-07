@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using Cinemachine;
 
@@ -25,11 +26,8 @@ public class Item
 public class CraftingStation : AbstractInteractable, Iinteractable
 {
     public GameObject CraftingPanel;
-    public GameObject ResourcesPanel;
-    public TextMeshProUGUI Resource1;
-    public TextMeshProUGUI Resource2;
-    public TextMeshProUGUI CraftText;
-    public TextMeshProUGUI GoldFuel;
+    public GameObject HealthPotionRecipe;
+    public GameObject SpeedPotionRecipe;
     public GameObject CraftButton;
     public CinemachineVirtualCamera cinemachineCamera;
 
@@ -46,48 +44,43 @@ public class CraftingStation : AbstractInteractable, Iinteractable
         ToggleCrafting();
     }
 
-    public void ToggleResources()
+    public void LoadHealthIngredients()
     {
-        if (ResourcesPanel != null)
-        {
-            ResourcesPanel.SetActive(!ResourcesPanel.activeSelf);
-        }
+        HealthPotionRecipe.SetActive(true);
+        SpeedPotionRecipe.SetActive(false);
     }
 
-    public void CraftGoldFuel()
+    public void LoadSpeedIngredients()
     {
-        if (PlayerInventory.fuelCount >= 1 && PlayerInventory.coinCount >= 1)
-        {
-            PlayerInventory.GFCount++;
-            PlayerInventory.fuelCount--;
-            PlayerInventory.coinCount--;
-        }
+        SpeedPotionRecipe.SetActive(true);
+        HealthPotionRecipe.SetActive(false);
     }
 
-    private void CheckInventory()
+    public void BrewPotion()
     {
-        if (PlayerInventory.fuelCount < 1)
+        if (HealthPotionRecipe.activeInHierarchy)
         {
-           Resource1.color = new Color(255,0,0,255);
+            if (PlayerInventory.fuelCount >= 1 && PlayerInventory.berryCount >= 1)
+            {
+                PlayerInventory.berryCount--;
+                PlayerInventory.fuelCount--;
+                PlayerInventory.HPCount++;
+            }
         }
-        else
+        else if (SpeedPotionRecipe.activeInHierarchy)
         {
-            Resource1.color = new Color(255,255,255,255);
-        }
-
-        if (PlayerInventory.coinCount < 1)
-        {
-           Resource2.color = new Color(255,0,0,255);
-        }
-        else
-        {
-            Resource2.color = new Color(255,255,255,255);
+            if (PlayerInventory.fuelCount >= 1 && PlayerInventory.honeyCount >= 1)
+            {
+                PlayerInventory.honeyCount--;
+                PlayerInventory.fuelCount--;
+                PlayerInventory.SPCount++;
+            }
         }
     }
 
     void Update()
     {
-        CheckInventory();
+        //CheckInventory();
 
         if(CraftingPanel.activeInHierarchy)
         {

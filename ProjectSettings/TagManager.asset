@@ -4,9 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - FuelCan
   - Enemy
   - Coin
+  - Berry
+  - Fuel
+  - Honey
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,8 @@ public class InputManager : MonoBehaviour
     public static event System.Action OnInteractInput;
     public static event System.Action OnScrollInput;
     public static event System.Action OnInventoryInput;
+    public static event System.Action OnHealInput;
+    public static event System.Action OnSpeedInput;
 
     private void Awake()
     {
@@ -36,6 +38,9 @@ public class InputManager : MonoBehaviour
         controls.Player.Interact.performed += ctx => OnInteractInput?.Invoke();
 
         controls.Player.ToggleInventory.performed += ctx => OnInventoryInput?.Invoke();
+        
+        controls.Player.Heal.performed += ctx => OnHealInput?.Invoke();
+        controls.Player.Speed.performed += ctx => OnSpeedInput?.Invoke();
         
         controls.Player.Enable();
     }
