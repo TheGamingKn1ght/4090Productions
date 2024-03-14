@@ -9,10 +9,11 @@ using Cinemachine;
 public class CraftingStation : AbstractInteractable
 {
     public GameObject CraftingPanel;
-    public GameObject HealthPotionRecipe;
-    public GameObject SpeedPotionRecipe;
+    public GameObject Ingredient1;
+    public GameObject Ingredient2;
     public GameObject CraftButton;
     public CinemachineVirtualCamera cinemachineCamera;
+    private RecipeSO currentRecipe;
 
     public void ToggleCrafting()
     {
@@ -27,37 +28,19 @@ public class CraftingStation : AbstractInteractable
         ToggleCrafting();
     }
 
-    public void LoadHealthIngredients()
+    public void LoadRecipeIngredients(RecipeSO recipe)
     {
-        HealthPotionRecipe.SetActive(true);
-        SpeedPotionRecipe.SetActive(false);
+        Ingredient1.GetComponent<Image>().sprite = recipe.ingredients[0].icon;
+        Ingredient2.GetComponent<Image>().sprite = recipe.ingredients[1].icon;
+        currentRecipe = recipe;
     }
-
-    public void LoadSpeedIngredients()
-    {
-        SpeedPotionRecipe.SetActive(true);
-        HealthPotionRecipe.SetActive(false);
-    }
-
     public void BrewPotion()
     {
-        if (HealthPotionRecipe.activeInHierarchy)
+        if (currentRecipe.ingredients[0].count>= 1 && currentRecipe.ingredients[1].count >= 1)
         {
-            if (PlayerInventory.fuelCount >= 1 && PlayerInventory.berryCount >= 1)
-            {
-                PlayerInventory.berryCount--;
-                PlayerInventory.fuelCount--;
-                PlayerInventory.HPCount++;
-            }
-        }
-        else if (SpeedPotionRecipe.activeInHierarchy)
-        {
-            if (PlayerInventory.fuelCount >= 1 && PlayerInventory.honeyCount >= 1)
-            {
-                PlayerInventory.honeyCount--;
-                PlayerInventory.fuelCount--;
-                PlayerInventory.SPCount++;
-            }
+            currentRecipe.ingredients[0].count--;
+            currentRecipe.ingredients[1].count--;
+            currentRecipe.Potion.count++;
         }
     }
 
