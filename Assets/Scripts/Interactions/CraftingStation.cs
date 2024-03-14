@@ -5,25 +5,8 @@ using UnityEngine.UI;
 using TMPro;
 using Cinemachine;
 
-public class Item
-{
-    private int ID { get; set; }
-    private string Name { get; set; }
-    private int Count { get; set; }
-    private Item[] Recipe { get; set; }
 
-    private void AddItem()
-    {
-        Count++;
-    }
-
-    private void RemoveItem()
-    {
-        Count--;
-    }
-}
-
-public class CraftingStation : AbstractInteractable, Iinteractable
+public class CraftingStation : AbstractInteractable
 {
     public GameObject CraftingPanel;
     public GameObject HealthPotionRecipe;
