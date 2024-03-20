@@ -11218,6 +11218,13 @@ MonoBehaviour:
   Ingredient2: {fileID: 449265821}
   CraftButton: {fileID: 663141368}
   cinemachineCamera: {fileID: 356616564}
+  allItems:
+  - {fileID: 11400000, guid: 5800e12e1e694a0408c17ee3dc662164, type: 2}
+  - {fileID: 11400000, guid: ef675610916bf094a8b292441f1a0e3a, type: 2}
+  - {fileID: 11400000, guid: 3fcd36ba997b2f7419e6750d305dfb1a, type: 2}
+  allPotions:
+  - {fileID: 11400000, guid: 5f00193bf85e9194eb7e80f231e9ade3, type: 2}
+  - {fileID: 11400000, guid: 00f445f84643ca94e8051db4fc659f53, type: 2}
 --- !u!65 &636622996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35223,6 +35230,8 @@ MonoBehaviour:
   Ingredient2: {fileID: 0}
   CraftButton: {fileID: 54467721}
   cinemachineCamera: {fileID: 356616564}
+  allItems: []
+  allPotions: []
 --- !u!1 &2036315195 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1916535956126141061, guid: f2cd5bc36f9085341a1d340103a98718, type: 3}
