@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3828803097994062157}
   - component: {fileID: 5245436931549053602}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SphereCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,10 +198,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4792862
+  m_Radius: 0.22832298
   m_Height: 2.0523815
   m_Direction: 1
-  m_Center: {x: 0.023774624, y: 0.92781544, z: 0.16509247}
+  m_Center: {x: 0.041208267, y: 0.92781544, z: -0.056518555}
 --- !u!54 &4726985316097748390
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -288,7 +288,6 @@ MonoBehaviour:
   waypoint: {x: 0, y: 0, z: 0}
   finalPosition: {x: 0, y: 0, z: 0}
   canSeePlayer: 0
-  canAttackPlayer: 0
 --- !u!64 &4935863332649775999
 MeshCollider:
   m_ObjectHideFlags: 0
