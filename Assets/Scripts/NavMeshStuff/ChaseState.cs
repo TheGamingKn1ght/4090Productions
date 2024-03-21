@@ -21,12 +21,10 @@ public class ChaseState : IState
     public void Execute()
     {
         //Chasing code
-        if (aiController.agent.GetComponent<NavMeshAgent>().isActiveAndEnabled && aiController.CanSeePlayer)
+        if (aiController.agent.GetComponent<NavMeshAgent>().isActiveAndEnabled && aiController.canSeePlayer)
         {
             //Chasing
             aiController.agent.SetDestination(aiController.target.transform.position);
-            //Attacking
-            aiController.agent.GetComponent<Enemy>().DealDamage(aiController.enemyEyes, aiController.target);
         }
     }
 

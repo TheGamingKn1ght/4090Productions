@@ -9,12 +9,15 @@ public class NavMeshTracking : MonoBehaviour
     [SerializeField] public Transform enemyEyes;
     [SerializeField] public Transform target;
     [SerializeField] private int maxWalkRadius = 10;
+    [SerializeField] private SphereCollider EnemySphereCollider;
+    [SerializeField] private CapsuleCollider CloseUpCollider;
     
     
     private StateMachine stateMachine;
     public Vector3 waypoint;
     public Vector3 finalPosition;
-    public bool CanSeePlayer;
+    public bool canSeePlayer;
+    public bool canAttackPlayer;
     
 
     public void Start()
@@ -36,12 +39,22 @@ public class NavMeshTracking : MonoBehaviour
     {
         if(stateMachine.currentState is ChaseState)
         {
-            
+            if (canAttackPlayer == true)
+            {
+                stateMachine.changeState(new AttackState(this));
+            }
         }
 
-        if (CanSeePlayer == true)
+        if (canSeePlayer == true)
         {
             stateMachine.changeState(new ChaseState(this));
+        }
+        else if (stateMachine.currentState is ChaseState)
+        {
+            if (canAttackPlayer == true)
+            {
+                stateMachine.changeState(new AttackState(this));
+            }
         }
         else
         {
@@ -62,18 +75,29 @@ public class NavMeshTracking : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            CanSeePlayer = true;
+            canSeePlayer = true;
+        }
+        else if (other.gameObject.CompareTag("Player"))
+        {
+            //canAttackPlayer = true;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit()
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (EnemySphereCollider.gameObject.CompareTag("Player"))
         {
-            CanSeePlayer = false;
+            canSeePlayer = false;
             //Recommence the Random pathfinding after leaving chase state
             //Would like to do this differently
             stateMachine.changeState(new PatrolState(this, finalPosition));
+        }
+        if (CloseUpCollider.gameObject.CompareTag("Player"))
+        {
+            canAttackPlayer = false;
+            //Recommence the Random pathfinding after leaving chase state
+            //Would like to do this differently
+            stateMachine.changeState(new ChaseState(this));
         }
     }
 
