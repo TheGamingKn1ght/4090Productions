@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Counter: {fileID: 1940793388}
+  activeInventory: {fileID: 0}
 --- !u!65 &3006388
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6734,6 +6735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Counter: {fileID: 1958395626}
+  activeInventory: {fileID: 0}
 --- !u!1 &421164946 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -9169289623691283656, guid: cbfb2336632b1b54183b02d2b89176c6, type: 3}
@@ -11218,13 +11220,6 @@ MonoBehaviour:
   Ingredient2: {fileID: 449265821}
   CraftButton: {fileID: 663141368}
   cinemachineCamera: {fileID: 356616564}
-  allItems:
-  - {fileID: 11400000, guid: 5800e12e1e694a0408c17ee3dc662164, type: 2}
-  - {fileID: 11400000, guid: ef675610916bf094a8b292441f1a0e3a, type: 2}
-  - {fileID: 11400000, guid: 3fcd36ba997b2f7419e6750d305dfb1a, type: 2}
-  allPotions:
-  - {fileID: 11400000, guid: 5f00193bf85e9194eb7e80f231e9ade3, type: 2}
-  - {fileID: 11400000, guid: 00f445f84643ca94e8051db4fc659f53, type: 2}
 --- !u!65 &636622996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14436,6 +14431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Counter: {fileID: 411673913}
+  activeInventory: {fileID: 0}
 --- !u!65 &815231364
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15221,6 +15217,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InvPanel: {fileID: 1065248869}
+  allItems:
+  - {fileID: 11400000, guid: 5800e12e1e694a0408c17ee3dc662164, type: 2}
+  - {fileID: 11400000, guid: ef675610916bf094a8b292441f1a0e3a, type: 2}
+  - {fileID: 11400000, guid: 3fcd36ba997b2f7419e6750d305dfb1a, type: 2}
+  allPotions:
+  - {fileID: 11400000, guid: 5f00193bf85e9194eb7e80f231e9ade3, type: 2}
+  - {fileID: 11400000, guid: 00f445f84643ca94e8051db4fc659f53, type: 2}
   fuelCounter: {fileID: 697815554}
   berryCounter: {fileID: 1958395626}
   honeyCounter: {fileID: 411673913}
@@ -21479,6 +21482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Counter: {fileID: 140487420}
+  activeInventory: {fileID: 0}
 --- !u!65 &1220006649
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29166,6 +29170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Counter: {fileID: 697815554}
+  activeInventory: {fileID: 0}
 --- !u!65 &1776890163
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31409,6 +31414,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InvPanel: {fileID: 0}
+  allItems: []
+  allPotions: []
   fuelCounter: {fileID: 0}
   berryCounter: {fileID: 0}
   honeyCounter: {fileID: 0}
@@ -35215,8 +35222,6 @@ MonoBehaviour:
   Ingredient2: {fileID: 0}
   CraftButton: {fileID: 54467721}
   cinemachineCamera: {fileID: 356616564}
-  allItems: []
-  allPotions: []
 --- !u!1 &2036315195 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1916535956126141061, guid: f2cd5bc36f9085341a1d340103a98718, type: 3}

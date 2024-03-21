@@ -15,7 +15,7 @@ public class AttackState : IState
     public void Enter()
     {
         Debug.Log("Animation Attacking");
-        aiController.agent.speed = 3;
+        aiController.agent.speed = 0;
     }
 
     public void Execute()
@@ -25,7 +25,7 @@ public class AttackState : IState
 
     public void Exit()
     {
-
+        aiController.agent.speed = 3;
     }
 
 }
