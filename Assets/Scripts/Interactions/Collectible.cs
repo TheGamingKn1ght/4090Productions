@@ -6,7 +6,7 @@ using TMPro;
 public class Collectible : AbstractInteractable
 {
     public TextMeshProUGUI Counter;
-    public static CraftingStation computer;
+    public PlayerInventory activeInventory;
 
     public override void Interact()
     {
@@ -15,29 +15,16 @@ public class Collectible : AbstractInteractable
     
     public void Collect()
     {
-        
-        switch (Interactor.hit.collider.gameObject.tag)
+       foreach(var item in PlayerInventory.singleton.allItems)
         {
-            case ("Berry") :
-                computer.allItems[0].count++;
-                //PlayerInventory.berryCount++;
-                Counter.text = PlayerInventory.berryCount.ToString();
+            if (Interactor.hit.collider.gameObject.tag == item.name)
+            {
+                item.count++;
+                Counter.text = item.count.ToString();
                 Debug.Log(Interactor.hit.collider.gameObject.tag.ToString());
-                break;
-            case ("Honey") :
-                computer.allItems[1].count++;
-                //PlayerInventory.honeyCount++;
-                Counter.text = PlayerInventory.honeyCount.ToString();    
-                Debug.Log(Interactor.hit.collider.gameObject.tag.ToString());
-                break;
-            case ("Fuel") :
-                computer.allItems[2].count++;
-                //PlayerInventory.fuelCount++;
-                Counter.text = PlayerInventory.fuelCount.ToString();    
-                Debug.Log(Interactor.hit.collider.gameObject.tag.ToString());
-                break;
+            }
         }
-     
+       
         this.gameObject.SetActive(false);
         
     }

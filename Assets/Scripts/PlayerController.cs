@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
 
     private void Heal()
     {
-        if (PlayerInventory.HPCount > 0)
+        if (PlayerInventory.singleton.allPotions[0].count > 0)
         {
             HealthBar.health += 25;
 
@@ -121,15 +121,15 @@ public class PlayerController : MonoBehaviour
                 HealthBar.health = 100f;
             }
 
-            PlayerInventory.HPCount--;
+            PlayerInventory.singleton.allPotions[0].count--;
         }
     }
 
     private void Speed()
     {
-        if (PlayerInventory.SPCount > 0)
+        if (PlayerInventory.singleton.allPotions[1].count > 0)
         {
-            PlayerInventory.SPCount--;
+            PlayerInventory.singleton.allPotions[1].count--;
             StartCoroutine(SpeedBoostCoroutine());
         }
     }

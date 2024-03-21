@@ -14,8 +14,6 @@ public class CraftingStation : AbstractInteractable
     public GameObject CraftButton;
     public CinemachineVirtualCamera cinemachineCamera;
     public static RecipeSO currentRecipe;
-    [SerializeField] public List<ItemSO> allItems = new List<ItemSO>();
-    [SerializeField] public List<ItemSO> allPotions = new List<ItemSO>();
 
     public void ToggleCrafting()
     {
@@ -38,19 +36,17 @@ public class CraftingStation : AbstractInteractable
     }
     public void BrewPotion()
     {
-        if (Collectible.computer.allItems[0].count >= 1 && Collectible.computer.allItems[2].count >= 1)
+        if (currentRecipe.ingredients[0].count >= 1 && currentRecipe.ingredients[1].count >= 1)
         {
             Debug.Log("Brewing");
-            Collectible.computer.allItems[0].count--;
-            Collectible.computer.allItems[2].count--;
-            Collectible.computer.allPotions[0].count++;
+            currentRecipe.ingredients[0].count--;
+            currentRecipe.ingredients[1].count--;
+            currentRecipe.Potion.count++;
         }
     }
 
     void Update()
     {
-        //CheckInventory();
-
         if(CraftingPanel.activeInHierarchy)
         {
             Cursor.lockState = CursorLockMode.None; 

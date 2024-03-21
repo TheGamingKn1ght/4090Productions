@@ -17,7 +17,7 @@ public class NavMeshTracking : MonoBehaviour
     public Vector3 waypoint;
     public Vector3 finalPosition;
     public bool canSeePlayer;
-    public bool canAttackPlayer;
+    private float attackDistance;
     
 
     public void Start()
@@ -37,22 +37,17 @@ public class NavMeshTracking : MonoBehaviour
 
     public void HandleTransition()
     {
-        if(stateMachine.currentState is ChaseState)
-        {
-            if (canAttackPlayer == true)
-            {
-                stateMachine.changeState(new AttackState(this));
-            }
-        }
-
         if (canSeePlayer == true)
         {
             stateMachine.changeState(new ChaseState(this));
         }
-        else if (stateMachine.currentState is ChaseState)
+        
+        if (stateMachine.currentState is ChaseState)
         {
-            if (canAttackPlayer == true)
+            attackDistance = Vector3.Distance(agent.transform.position, target.transform.position);
+            if (attackDistance <= 1)
             {
+                Debug.Log(attackDistance);
                 stateMachine.changeState(new AttackState(this));
             }
         }
@@ -77,28 +72,20 @@ public class NavMeshTracking : MonoBehaviour
         {
             canSeePlayer = true;
         }
-        else if (other.gameObject.CompareTag("Player"))
-        {
-            //canAttackPlayer = true;
-        }
+        
     }
 
-    private void OnTriggerExit()
+    private void OnTriggerExit(Collider other)
     {
-        if (EnemySphereCollider.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             canSeePlayer = false;
             //Recommence the Random pathfinding after leaving chase state
             //Would like to do this differently
+            finalPosition = GetWaypoint();
             stateMachine.changeState(new PatrolState(this, finalPosition));
         }
-        if (CloseUpCollider.gameObject.CompareTag("Player"))
-        {
-            canAttackPlayer = false;
-            //Recommence the Random pathfinding after leaving chase state
-            //Would like to do this differently
-            stateMachine.changeState(new ChaseState(this));
-        }
+        
     }
 
     public void SetDestination(Vector3 destination)

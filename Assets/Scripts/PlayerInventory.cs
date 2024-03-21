@@ -6,20 +6,46 @@ using Cinemachine;
 
 public class PlayerInventory : MonoBehaviour
 {
+    #region Singleton
+    public static PlayerInventory singleton;
+
+    private void Awake()
+    {
+        if (singleton == null)
+        {
+            singleton = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        foreach(var item in allItems)
+        {
+            item.count = 0;
+        }
+        foreach (var potion in allPotions)
+        {
+            potion.count = 0;
+        }
+
+    }
+
+
+    #endregion
+    
     private void OnEnable()
     {
         InputManager.OnInventoryInput += ToggleInventory;
     }
-    
     public GameObject InvPanel;
 
+    [SerializeField] public List<ItemSO> allItems = new List<ItemSO>();
+    [SerializeField] public List<ItemSO> allPotions = new List<ItemSO>();
     #region Inventory Counters
 
     // ---- Ingredients ------
 
-    public static int fuelCount;
-    public static int berryCount;
-    public static int honeyCount;
     public TextMeshProUGUI fuelCounter;
     public TextMeshProUGUI berryCounter;
     public TextMeshProUGUI honeyCounter;
@@ -29,8 +55,6 @@ public class PlayerInventory : MonoBehaviour
 
     // ---- Potions ------
 
-    public static int HPCount;
-    public static int SPCount;
     public TextMeshProUGUI HPCounter;
     public TextMeshProUGUI SPCounter;
 
@@ -48,15 +72,25 @@ public class PlayerInventory : MonoBehaviour
     }
 
     void Update()
-    {
-        fuelCounter.text = fuelCount.ToString();
-        berryCounter.text = berryCount.ToString();
-        honeyCounter.text = honeyCount.ToString();
+    {   /*
+        foreach (var item in allItems)
+        {
+            item.text = item.count.ToString();
+        }
+        foreach (var potion in allPotions)
+        {
+            potion.text = potion.count.ToString();
+            SPCounterhotkey.text = potion.count.ToString();
+        }
+        */
+        fuelCounter.text = allItems[2].count.ToString();
+        berryCounter.text = allItems[0].count.ToString();
+        honeyCounter.text = allItems[1].count.ToString();
 
-        HPCounter.text = HPCount.ToString();
-        SPCounter.text = SPCount.ToString();
+        HPCounter.text = allPotions[0].count.ToString();
+        SPCounter.text = allPotions[1].count.ToString();
 
-        HPCounterhotkey.text = HPCount.ToString();
-        SPCounterhotkey.text = SPCount.ToString();
+        HPCounterhotkey.text = allPotions[0].count.ToString();
+        SPCounterhotkey.text = allPotions[1].count.ToString();
     }
 }
