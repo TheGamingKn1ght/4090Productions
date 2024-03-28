@@ -201,10 +201,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.22832298
+  m_Radius: 0.56446934
   m_Height: 2.0523815
   m_Direction: 1
-  m_Center: {x: 0.041208267, y: 0.92781544, z: -0.056518555}
+  m_Center: {x: 0.03534603, y: 0.92781544, z: 0.20034504}
 --- !u!54 &4726985316097748390
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -326,4 +326,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  agent: {fileID: 0}

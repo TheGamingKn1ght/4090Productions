@@ -45,6 +45,11 @@ public class MainMenuManager : MonoBehaviour
             {
                 priority = View.Priority;
             }
+            if(priority == 2)
+            {
+                View.Priority -= 2;
+            }
         }
+
     }
 }
