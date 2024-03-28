@@ -28,5 +28,6 @@ public class HealthBar : MonoBehaviour
         {
             easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, health, lerpSpeed);
         }
+        
     }
 }

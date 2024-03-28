@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Transform orientationCam;
 
+    [SerializeField] private Canvas DeathCanvas;
+
     private int counter = 0;
 
     public GameObject Pistol;
@@ -44,6 +46,11 @@ public class PlayerController : MonoBehaviour
         movement = orientationCam.transform.forward * InputManager.movementInput.y * moveSpeed + orientationCam.transform.right * InputManager.movementInput.x * moveSpeed;
         movement.y = rb.velocity.y;
         rb.velocity = movement;
+
+        if (HealthBar.health == 0)
+        {
+            Death();
+        }
     }
 
     private void Jump()
@@ -132,6 +139,12 @@ public class PlayerController : MonoBehaviour
             PlayerInventory.singleton.allPotions[1].count--;
             StartCoroutine(SpeedBoostCoroutine());
         }
+    }
+
+    public void Death()
+    {
+        Time.timeScale = 0.5f;
+        DeathCanvas.gameObject.SetActive(true);
     }
 
     IEnumerator SpeedBoostCoroutine()
