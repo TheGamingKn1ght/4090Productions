@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     private float currentAttackWaitTime = 0f;
     private bool isWaiting;
 
+    [SerializeField] Animator EnemyAnimator;
+
     public float impactForce = 500;
 
     public void TakeDamage(RaycastHit info, Transform camPos)
@@ -63,8 +65,12 @@ public class Enemy : MonoBehaviour
 
     public void Death(RaycastHit character)
     {
-        agent.GetComponent<NavMeshAgent>().enabled = false;
+        //agent.enabled = false;
+        agent.SetDestination(this.transform.position);
+        agent.isStopped = true;
+        agent.speed = 0;
         character.transform.Rotate(-Vector3.right,90);
+        EnemyAnimator.SetBool("isDead", true);
         //character.transform.Translate(Vector3.up);
     }
 

@@ -9,9 +9,18 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera MainView;
     [SerializeField] private CinemachineVirtualCamera PlayView;
     [SerializeField] private CinemachineVirtualCamera SaveView;
-    
+    List<CinemachineVirtualCamera> priorityQueue;
+
     [Header("Canvas'")]
     [SerializeField] private Canvas OpeningScreenCanvas;
+
+    private void Awake()
+    {
+        priorityQueue = new List<CinemachineVirtualCamera>();
+        priorityQueue.Add(MainView);
+        priorityQueue.Add(PlayView);
+        priorityQueue.Add(SaveView);
+    }
 
     public void ActivateSaveCamera()
     {
@@ -29,6 +38,13 @@ public class MainMenuManager : MonoBehaviour
     }
     public void ReturnToLastCamera()
     {
-
+        int priority = 0;
+        foreach(var View in priorityQueue)
+        {
+            if(priority < View.Priority)
+            {
+                priority = View.Priority;
+            }
+        }
     }
 }

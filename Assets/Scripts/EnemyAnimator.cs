@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyAnimator : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private NavMeshAgent agent;
+    //[SerializeField] private NavMeshAgent agent;
 
     private void LateUpdate()
     {
@@ -15,6 +15,6 @@ public class EnemyAnimator : MonoBehaviour
 
     private void UpdateLocalAnimator()
     {
-        animator.SetFloat("speedX", agent.speed);
+        //animator.SetFloat("speedX", agent.speed);
     }
 }

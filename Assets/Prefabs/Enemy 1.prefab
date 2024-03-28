@@ -167,9 +167,6 @@ PrefabInstance:
       addedObject: {fileID: 7440423847550970723}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8925a62232aa01c4cb41e9134e1aaffd, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4935863332649775999}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8925a62232aa01c4cb41e9134e1aaffd, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3455970926895842373}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8925a62232aa01c4cb41e9134e1aaffd, type: 3}
       insertIndex: -1
@@ -250,6 +247,7 @@ MonoBehaviour:
   agent: {fileID: 1109599729843853316}
   damage: 5
   AttackWaitTime: 1.5
+  EnemyAnimator: {fileID: 3455970926895842373}
   impactForce: 501
 --- !u!195 &1109599729843853316
 NavMeshAgent:
@@ -294,28 +292,6 @@ MonoBehaviour:
   waypoint: {x: 0, y: 0, z: 0}
   finalPosition: {x: 0, y: 0, z: 0}
   canSeePlayer: 0
---- !u!64 &4935863332649775999
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7971558322200745009}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!95 &3455970926895842373
 Animator:
   serializedVersion: 5

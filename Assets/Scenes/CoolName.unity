@@ -214,6 +214,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   damage: 0
   AttackWaitTime: 0
+  EnemyAnimator: {fileID: 0}
   impactForce: 500
 --- !u!54 &3006386
 Rigidbody:
@@ -21584,6 +21585,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   damage: 0
   AttackWaitTime: 0
+  EnemyAnimator: {fileID: 0}
   impactForce: 500
 --- !u!1 &1221514112 stripped
 GameObject:
@@ -35091,6 +35093,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   damage: 0
   AttackWaitTime: 0
+  EnemyAnimator: {fileID: 0}
   impactForce: 500
 --- !u!54 &2024043923
 Rigidbody:
