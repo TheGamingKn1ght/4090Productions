@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Transform orientationCam;
 
-    [SerializeField] private Canvas DeathCanvas;
+    [SerializeField] private GameObject QuadVideoPlayer;
 
     private int counter = 0;
 
@@ -143,8 +143,9 @@ public class PlayerController : MonoBehaviour
 
     public void Death()
     {
-        Time.timeScale = 0.5f;
-        DeathCanvas.gameObject.SetActive(true);
+        Time.timeScale = 0.25f;
+        QuadVideoPlayer.SetActive(true);
+        SceneSwitcher.Singleton.PlayGame(1);
     }
 
     IEnumerator SpeedBoostCoroutine()

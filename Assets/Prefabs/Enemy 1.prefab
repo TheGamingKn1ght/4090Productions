@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1109599729843853316}
-  damage: 5
+  damage: 25
   AttackWaitTime: 1.5
   EnemyAnimator: {fileID: 3455970926895842373}
   impactForce: 501
