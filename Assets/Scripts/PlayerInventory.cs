@@ -72,17 +72,17 @@ public class PlayerInventory : MonoBehaviour
     }
 
     void Update()
-    {   /*
+    {   
         foreach (var item in allItems)
         {
-            item.text = item.count.ToString();
+            item.textMesh.text = item.count.ToString();
         }
         foreach (var potion in allPotions)
         {
-            potion.text = potion.count.ToString();
+            potion.textMesh.text = potion.count.ToString();
             SPCounterhotkey.text = potion.count.ToString();
         }
-        */
+        
         fuelCounter.text = allItems[2].count.ToString();
         berryCounter.text = allItems[0].count.ToString();
         honeyCounter.text = allItems[1].count.ToString();
