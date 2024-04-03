@@ -14777,6 +14777,7 @@ MonoBehaviour:
   jumpForce: 300
   orientationCam: {fileID: 963194228}
   QuadVideoPlayer: {fileID: 1122517180}
+  DeathWaitTime: 4
   Pistol: {fileID: 2139025795}
   Crowbar: {fileID: 703819675790536188}
 --- !u!54 &843097794

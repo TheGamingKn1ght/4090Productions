@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject QuadVideoPlayer;
 
     private int counter = 0;
+
+    [SerializeField] private float DeathWaitTime = 4;
+    private float currentDeathWaitTime = 0f;
+    private bool isDead = false;
 
     public GameObject Pistol;
     public GameObject Crowbar;
@@ -145,7 +150,20 @@ public class PlayerController : MonoBehaviour
     {
         Time.timeScale = 0.25f;
         QuadVideoPlayer.SetActive(true);
-        SceneSwitcher.Singleton.PlayGame(1);
+        
+        do
+        {
+            currentDeathWaitTime += Time.deltaTime;
+            if (currentDeathWaitTime >= DeathWaitTime)
+            {
+                isDead = true;
+                currentDeathWaitTime = 0f;
+                Time.timeScale = 1;
+                QuadVideoPlayer.SetActive(false);
+                SceneManager.LoadSceneAsync(1);
+            }
+        } while (isDead == false);
+        
     }
 
     IEnumerator SpeedBoostCoroutine()

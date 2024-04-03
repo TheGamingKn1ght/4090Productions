@@ -73,6 +73,7 @@ public class PlayerInventory : MonoBehaviour
 
     void Update()
     {   
+        /*
         foreach (var item in allItems)
         {
             item.textMesh.text = item.count.ToString();
@@ -82,7 +83,7 @@ public class PlayerInventory : MonoBehaviour
             potion.textMesh.text = potion.count.ToString();
             SPCounterhotkey.text = potion.count.ToString();
         }
-        
+        */
         fuelCounter.text = allItems[2].count.ToString();
         berryCounter.text = allItems[0].count.ToString();
         honeyCounter.text = allItems[1].count.ToString();
