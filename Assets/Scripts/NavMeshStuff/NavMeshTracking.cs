@@ -47,7 +47,7 @@ public class NavMeshTracking : MonoBehaviour
             attackDistance = Vector3.Distance(agent.transform.position, target.transform.position);
             if (attackDistance <= 1)
             {
-                Debug.Log(attackDistance);
+                //Debug.Log(attackDistance);
                 stateMachine.changeState(new AttackState(this));
             }
         }

@@ -18,10 +18,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform orientationCam;
 
     [SerializeField] private GameObject QuadVideoPlayer;
+    [SerializeField] private GameObject FadePlayer;
 
     private int counter = 0;
 
-    [SerializeField] private float DeathWaitTime = 4;
+    [SerializeField] private float DeathWaitTime = 1.2f;
     private float currentDeathWaitTime = 0f;
     private bool isDead = false;
 
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
         movement.y = rb.velocity.y;
         rb.velocity = movement;
 
-        if (HealthBar.health == 0)
+        if (HealthBar.health == 0 && isDead == false)
         {
             Death();
         }
@@ -148,21 +149,29 @@ public class PlayerController : MonoBehaviour
 
     public void Death()
     {
-        Time.timeScale = 0.25f;
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0.25f;
+        }
         QuadVideoPlayer.SetActive(true);
         
-        do
+        currentDeathWaitTime += Time.deltaTime;
+        Debug.Log(currentDeathWaitTime);
+        if(currentDeathWaitTime >= DeathWaitTime / 2)
         {
-            currentDeathWaitTime += Time.deltaTime;
-            if (currentDeathWaitTime >= DeathWaitTime)
-            {
-                isDead = true;
-                currentDeathWaitTime = 0f;
-                Time.timeScale = 1;
-                QuadVideoPlayer.SetActive(false);
-                SceneManager.LoadSceneAsync(1);
-            }
-        } while (isDead == false);
+            FadePlayer.SetActive(true);
+        }
+        if (currentDeathWaitTime >= DeathWaitTime)
+        {
+            isDead = true;
+            currentDeathWaitTime = 0f;
+            Time.timeScale = 1f;
+            Debug.Log("Reset");
+            QuadVideoPlayer.SetActive(false);
+            FadePlayer.SetActive(false);
+            SceneManager.LoadSceneAsync(1);
+        }
+        
         
     }
 
