@@ -107,6 +107,7 @@ public class DiaManager : MonoBehaviour
     }
     private IEnumerator TypeText(string text)
     {
+        Debug.Log(text);
         dialogueText.text = "";
         foreach (char letter in text.ToCharArray())
         {
