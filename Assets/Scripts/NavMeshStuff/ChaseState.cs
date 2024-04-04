@@ -16,6 +16,7 @@ public class ChaseState : IState
     {
         Debug.Log("Animation Chasing");
         aiController.agent.speed = 3;
+        aiController.GetComponent<Enemy>().EnemyAnimator.SetBool("isChasing", true);
     }
 
     public void Execute()
@@ -30,7 +31,7 @@ public class ChaseState : IState
 
     public void Exit()
     {
-
+        aiController.GetComponent<Enemy>().EnemyAnimator.SetBool("isChasing", false);
     }
 
 }

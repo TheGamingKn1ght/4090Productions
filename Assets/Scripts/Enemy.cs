@@ -8,21 +8,30 @@ public class Enemy : MonoBehaviour
     [Header("Agent Properties")]
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private float damage;
+    [SerializeField] private float health = 100;
 
     [Header("Attack Properties")]
     [SerializeField] private float AttackWaitTime; 
     private float currentAttackWaitTime = 0f;
     private bool isWaiting;
 
-    [SerializeField] Animator EnemyAnimator;
+    [SerializeField] public Animator EnemyAnimator;
 
     public float impactForce = 500;
 
-    public void TakeDamage(RaycastHit info, Transform camPos)
+    public void TakeDamage(RaycastHit info, Transform camPos, int damage)
     {
         if (info.rigidbody.CompareTag("Enemy") == true)
         {
-            Death(info);
+            health -= damage;
+            if(health <= 0)
+            {
+                Death(info);
+            }
+            else
+            {
+                EnemyAnimator.SetBool("isHit", true);
+            }
         }
         else
         {
@@ -41,7 +50,10 @@ public class Enemy : MonoBehaviour
             if(currentAttackWaitTime >= AttackWaitTime)
             {
                 isWaiting = false;
+                EnemyAnimator.SetBool("isAttacking", true);
                 currentAttackWaitTime = 0f;
+                AudioManager.Singleton.PlaySoundEffect("Crowbar");
+                
             }
         }
         else

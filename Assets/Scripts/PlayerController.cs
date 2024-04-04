@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
                     if (enemy != null)
                     {
                         Debug.Log("Yay");
-                        enemy.TakeDamage(hit, orientationCam);
+                        enemy.TakeDamage(hit, orientationCam,50);
                     }
                 }
             }
@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
                     Enemy enemy = hit.transform.GetComponent<Enemy>();
                     if (enemy != null)
                     {
-                        enemy.TakeDamage(hit, orientationCam);
+                        enemy.TakeDamage(hit, orientationCam,35);
                     }
                 }
             }
@@ -156,7 +156,6 @@ public class PlayerController : MonoBehaviour
         QuadVideoPlayer.SetActive(true);
         
         currentDeathWaitTime += Time.deltaTime;
-        Debug.Log(currentDeathWaitTime);
         if(currentDeathWaitTime >= DeathWaitTime / 2)
         {
             FadePlayer.SetActive(true);
@@ -166,7 +165,6 @@ public class PlayerController : MonoBehaviour
             isDead = true;
             currentDeathWaitTime = 0f;
             Time.timeScale = 1f;
-            Debug.Log("Reset");
             QuadVideoPlayer.SetActive(false);
             FadePlayer.SetActive(false);
             SceneManager.LoadSceneAsync(1);
