@@ -5945,6 +5945,7 @@ GameObject:
   - component: {fileID: 392576000}
   - component: {fileID: 392576002}
   - component: {fileID: 392576001}
+  - component: {fileID: 392576003}
   m_Layer: 5
   m_Name: Counter - Speed Potion
   m_TagString: Untagged
@@ -6068,6 +6069,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392575999}
   m_CullTransparentMesh: 1
+--- !u!114 &392576003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392575999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bc41292137f7a44b8d5276d5dbc640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 00f445f84643ca94e8051db4fc659f53, type: 2}
+  text: {fileID: 392576001}
 --- !u!1 &394365862 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4358546433871704988, guid: cbfb2336632b1b54183b02d2b89176c6, type: 3}
@@ -6322,6 +6337,7 @@ GameObject:
   - component: {fileID: 411673912}
   - component: {fileID: 411673914}
   - component: {fileID: 411673913}
+  - component: {fileID: 411673915}
   m_Layer: 5
   m_Name: Counter - Honey
   m_TagString: Untagged
@@ -6445,6 +6461,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411673911}
   m_CullTransparentMesh: 1
+--- !u!114 &411673915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411673911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bc41292137f7a44b8d5276d5dbc640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: ef675610916bf094a8b292441f1a0e3a, type: 2}
+  text: {fileID: 411673913}
 --- !u!1 &413305256 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4451369333339116922, guid: cbfb2336632b1b54183b02d2b89176c6, type: 3}
@@ -12208,6 +12238,7 @@ GameObject:
   - component: {fileID: 697815553}
   - component: {fileID: 697815555}
   - component: {fileID: 697815554}
+  - component: {fileID: 697815556}
   m_Layer: 5
   m_Name: Counter - Fuel
   m_TagString: Untagged
@@ -12331,6 +12362,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697815552}
   m_CullTransparentMesh: 1
+--- !u!114 &697815556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697815552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bc41292137f7a44b8d5276d5dbc640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 3fcd36ba997b2f7419e6750d305dfb1a, type: 2}
+  text: {fileID: 697815554}
 --- !u!1 &697846251 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -9056593216858513309, guid: f2cd5bc36f9085341a1d340103a98718, type: 3}
@@ -18925,6 +18970,7 @@ GameObject:
   - component: {fileID: 1047283282}
   - component: {fileID: 1047283284}
   - component: {fileID: 1047283283}
+  - component: {fileID: 1047283285}
   m_Layer: 5
   m_Name: Counter - Health Potion
   m_TagString: Untagged
@@ -19048,6 +19094,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047283281}
   m_CullTransparentMesh: 1
+--- !u!114 &1047283285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047283281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bc41292137f7a44b8d5276d5dbc640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 5f00193bf85e9194eb7e80f231e9ade3, type: 2}
+  text: {fileID: 1047283283}
 --- !u!1 &1048370269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4955101346877698981, guid: cbfb2336632b1b54183b02d2b89176c6, type: 3}
@@ -32507,6 +32567,7 @@ GameObject:
   - component: {fileID: 1958395625}
   - component: {fileID: 1958395627}
   - component: {fileID: 1958395626}
+  - component: {fileID: 1958395628}
   m_Layer: 5
   m_Name: Counter - Berry
   m_TagString: Untagged
@@ -32630,6 +32691,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958395624}
   m_CullTransparentMesh: 1
+--- !u!114 &1958395628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958395624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bc41292137f7a44b8d5276d5dbc640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 5800e12e1e694a0408c17ee3dc662164, type: 2}
+  text: {fileID: 1958395626}
 --- !u!1 &1960601380 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2844184714318712473, guid: f2cd5bc36f9085341a1d340103a98718, type: 3}
