@@ -31,11 +31,20 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        InputManager.OnJumpInput += () => Jump();
-        InputManager.OnShootInput += () => Attack();
-        InputManager.OnScrollInput += () => Scroll();
-        InputManager.OnHealInput += () => Heal();
-        InputManager.OnSpeedInput += () => Speed();
+        InputManager.OnJumpInput += Jump;
+        InputManager.OnShootInput += Attack;
+        InputManager.OnScrollInput += Scroll;
+        InputManager.OnHealInput += Heal;
+        InputManager.OnSpeedInput += Speed;
+    }
+
+    private void OnDisable()
+    {
+        InputManager.OnJumpInput -= Jump;
+        InputManager.OnShootInput -= Attack;
+        InputManager.OnScrollInput -= Scroll;
+        InputManager.OnHealInput -= Heal;
+        InputManager.OnSpeedInput -= Speed;
     }
 
     // Start is called before the first frame update
@@ -77,13 +86,18 @@ public class PlayerController : MonoBehaviour
             {
                 AudioManager.Singleton.PlaySoundEffect("Pistol Shot");
                 RaycastHit hit;
-                if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, gunRange))
+
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit, gunRange))
                 {
+                    Debug.Log(hit.transform.gameObject.name);
+
                     Enemy enemy = hit.transform.GetComponent<Enemy>();
                     if (enemy != null)
                     {
                         Debug.Log("Yay");
-                        enemy.TakeDamage(hit, orientationCam,50);
+                        enemy.TakeDamage(50);
                     }
                 }
             }
@@ -178,6 +192,14 @@ public class PlayerController : MonoBehaviour
         moveSpeed = 12;
         yield return new WaitForSeconds(5f);
         moveSpeed = 5;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(ray.origin, ray.direction * 20);
+        //Gizmos.DrawLine(orientationCam.transform.position, orientationCam.transform.forward * 100);
     }
 
 }

@@ -19,6 +19,19 @@ public class Enemy : MonoBehaviour
 
     public float impactForce = 500;
 
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Death();
+        }
+        else
+        {
+            EnemyAnimator.SetBool("isHit", true);
+        }
+    }
+
     public void TakeDamage(RaycastHit info, Transform camPos, int damage)
     {
         if (info.rigidbody.CompareTag("Enemy") == true)
@@ -26,7 +39,7 @@ public class Enemy : MonoBehaviour
             health -= damage;
             if(health <= 0)
             {
-                Death(info);
+                //Death(info);
             }
             else
             {
@@ -75,13 +88,12 @@ public class Enemy : MonoBehaviour
         */
     }
 
-    public void Death(RaycastHit character)
+    public void Death()
     {
         //agent.enabled = false;
         agent.SetDestination(this.transform.position);
         agent.isStopped = true;
         agent.speed = 0;
-        character.transform.Rotate(-Vector3.right,90);
         EnemyAnimator.SetBool("isDead", true);
         //character.transform.Translate(Vector3.up);
     }
