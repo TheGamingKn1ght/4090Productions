@@ -5507,7 +5507,7 @@ Transform:
   m_GameObject: {fileID: 356616563}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 16.29, y: 35.378002, z: 152.16}
+  m_LocalPosition: {x: 16.29, y: 32.634003, z: 152.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7692,8 +7692,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 21
+  m_fontSizeBase: 21
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -15047,7 +15047,7 @@ Transform:
   m_GameObject: {fileID: 843097788}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.29, y: 34.838, z: 152.16}
+  m_LocalPosition: {x: 16.29, y: 32.094, z: 152.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17297,7 +17297,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.29, y: 35.378002, z: 152.16}
+  m_LocalPosition: {x: 16.29, y: 32.634003, z: 152.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25729,6 +25729,7 @@ GameObject:
   - component: {fileID: 1515088927}
   - component: {fileID: 1515088926}
   - component: {fileID: 1515088925}
+  - component: {fileID: 1515088929}
   m_Layer: 0
   m_Name: Radio
   m_TagString: Untagged
@@ -25816,12 +25817,26 @@ Transform:
   m_GameObject: {fileID: 1515088924}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.748, y: 35.859, z: 138.643}
+  m_LocalPosition: {x: 13.541, y: 32.209, z: 153.604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1515088929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515088924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5726bfc4d1d46458ac6461d74537be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueStrings: []
+  NPCTransform: {fileID: 1515088928}
 --- !u!1 &1515473421 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3131268883812956153, guid: cbfb2336632b1b54183b02d2b89176c6, type: 3}
@@ -29090,7 +29105,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueStrings:
-  - text: Note #1
+  - text: Hello!! Hello!! This is 141 Blueberry radio coming at you live at arkfall.
+    isEnd: 0
+    isQuestion: 0
+    answerOption1: hi
+    option1IndexJump: 0
+    startDialogueEvents:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvents:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: People are speculating it is a virus was first discovered when a man interacted
+      with a rats, can you believe it Well hope everyone can stay safe and home.
+    isEnd: 0
+    isQuestion: 1
+    answerOption1: hi
+    option1IndexJump: 2
+    startDialogueEvents:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvents:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: "There is no cure to this virus but it seems harmless. Alright folks that
+      it for tonight's news segment, coming we have Taylor Wift and Bryan Urie with
+      there brand new song \u201Cyou\u201D."
     isEnd: 1
     isQuestion: 0
     answerOption1: hi
@@ -29182,8 +29222,8 @@ Transform:
   m_GameObject: {fileID: 1742754098}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.746, y: 35.452, z: 138.716}
-  m_LocalScale: {x: 1, y: 2, z: 3}
+  m_LocalPosition: {x: 18.08, y: 34.81, z: 153.49}
+  m_LocalScale: {x: 12, y: 8, z: 12}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -30488,6 +30528,113 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7561687968477709525, guid: cbfb2336632b1b54183b02d2b89176c6, type: 3}
+--- !u!1 &1841575344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1841575348}
+  - component: {fileID: 1841575347}
+  - component: {fileID: 1841575346}
+  - component: {fileID: 1841575345}
+  m_Layer: 0
+  m_Name: Note
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!136 &1841575345
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841575344}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &1841575346
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841575344}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1841575347
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841575344}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1841575348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841575344}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.88, y: 35.115, z: 134.066}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1843908978 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2550397945253725214, guid: f2cd5bc36f9085341a1d340103a98718, type: 3}
@@ -37073,3 +37220,4 @@ SceneRoots:
   - {fileID: 1515088928}
   - {fileID: 1742754103}
   - {fileID: 701996900}
+  - {fileID: 1841575348}

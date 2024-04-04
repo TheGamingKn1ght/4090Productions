@@ -15,7 +15,7 @@ public class DiaTrigger : MonoBehaviour
         if (other.CompareTag("Player") && !hadSpooken)
         {
             other.gameObject.GetComponent<DiaManager>().DialogueStart(dialogueStrings, NPCTransform);
-            hadSpooken=true;
+            hadSpooken = true;
 
         }
     }
