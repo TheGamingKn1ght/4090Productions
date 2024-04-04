@@ -15164,6 +15164,7 @@ MonoBehaviour:
   typingSpeed: 0.05
   TurnSpeed: 2
   playerController: {fileID: 843097793}
+  cinemachineCamera: {fileID: 356616564}
 --- !u!1 &844594958 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -685685307045539158, guid: cbfb2336632b1b54183b02d2b89176c6, type: 3}
@@ -29090,8 +29091,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueStrings:
   - text: Note #1
-    isEnd: 0
-    isQuestion: 1
+    isEnd: 1
+    isQuestion: 0
     answerOption1: hi
     option1IndexJump: 0
     startDialogueEvents:

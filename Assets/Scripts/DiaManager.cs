@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
 using Unity.VisualScripting;
+using Cinemachine;
 
 public class DiaManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class DiaManager : MonoBehaviour
 
     [Header("Player")]
     [SerializeField] private PlayerController playerController;
+    public CinemachineVirtualCamera cinemachineCamera;
     private Transform playerCamera;
 
     private int currentDialogueIndex = 0;
@@ -33,9 +35,10 @@ public class DiaManager : MonoBehaviour
     {
         dialogueParent.SetActive(true);
         playerController.enabled = false;
-        
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        cinemachineCamera.enabled = false;
 
         StartCoroutine(TurnCameraTowardsNPC(NPC));
 
@@ -136,5 +139,22 @@ public class DiaManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    void Update()
+    {
+        if (dialogueParent.activeInHierarchy)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            playerController.StopMoving();
+            cinemachineCamera.enabled = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            cinemachineCamera.enabled = true;
+        }
     }
 }

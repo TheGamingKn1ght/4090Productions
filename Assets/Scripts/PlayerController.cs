@@ -77,6 +77,10 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+    public void StopMoving()
+    {
+        rb.velocity = Vector3.zero;
+    }
     
     private void Attack()
     {
