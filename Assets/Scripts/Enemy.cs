@@ -11,9 +11,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float health = 100;
 
     [Header("Attack Properties")]
-    [SerializeField] private float AttackWaitTime; 
+    Dictionary<int, int> attackWaitTimes = new Dictionary<int, int>();
+    private float AttackWaitTime;
     private float currentAttackWaitTime = 0f;
     private bool isWaiting;
+    private int attackNum = 0;
 
     [SerializeField] public Animator EnemyAnimator;
 
@@ -29,9 +31,11 @@ public class Enemy : MonoBehaviour
         else
         {
             EnemyAnimator.SetBool("isHit", true);
+            //trying to reset
+            EnemyAnimator.SetBool("isHit", false);
         }
     }
-
+    /*
     public void TakeDamage(RaycastHit info, Transform camPos, int damage)
     {
         if (info.rigidbody.CompareTag("Enemy") == true)
@@ -54,16 +58,44 @@ public class Enemy : MonoBehaviour
         }
         
     }
-
+    */
     public void DealDamage(Transform camPos, Transform player)
     {
+        if(attackNum == 0)
+        {
+            attackNum = RandomNum();
+        }
         if (isWaiting)
         {
+            switch (attackNum)
+            {
+                case 1:
+                    AttackWaitTime = 1.017f;
+                    break;
+                case 2:
+                    AttackWaitTime = 3.367f;
+                    break;
+                case 3:
+                    AttackWaitTime = 4.617f;
+                    break;
+            }
+            Debug.Log("Wait: " + AttackWaitTime);
+            /*
+            foreach(KeyValuePair<int, int> vals in attackWaitTimes)
+            {
+                if(attackNum == vals.Key)
+                {
+                    attackWaitTimes = vals.Key;
+                }
+            }
+            */
             currentAttackWaitTime += Time.deltaTime;
             if(currentAttackWaitTime >= AttackWaitTime)
             {
                 isWaiting = false;
                 EnemyAnimator.SetBool("isAttacking", true);
+                EnemyAnimator.SetInteger("randomAttackIndex", attackNum);
+                attackNum = 0;
                 currentAttackWaitTime = 0f;
                 AudioManager.Singleton.PlaySoundEffect("Crowbar");
                 
@@ -98,5 +130,9 @@ public class Enemy : MonoBehaviour
         //character.transform.Translate(Vector3.up);
     }
 
-
+    private int RandomNum()
+    {
+        int num = Random.Range(0,4);
+        return num;
+    }
 }

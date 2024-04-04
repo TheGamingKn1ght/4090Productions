@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
                     Enemy enemy = hit.transform.GetComponent<Enemy>();
                     if (enemy != null)
                     {
-                        enemy.TakeDamage(hit, orientationCam,35);
+                        enemy.TakeDamage(35);
                     }
                 }
             }

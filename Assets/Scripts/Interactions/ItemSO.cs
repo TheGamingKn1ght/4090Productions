@@ -9,5 +9,5 @@ public class ItemSO : ScriptableObject
     public Sprite icon;
     public bool isStackable = false;
     public int count;
-    public TextMeshProUGUI textMesh;
+    //public TMP_Text textMesh;
 }
