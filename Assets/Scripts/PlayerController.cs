@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     public GameObject Pistol;
     public GameObject Crowbar;
 
+    Vector3 playerPos;
+    Vector3 playerPos2;
+
     private void OnEnable()
     {
         InputManager.OnJumpInput += Jump;
@@ -50,6 +53,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerPos = this.transform.position;
         //caching
         rb = GetComponent<Rigidbody>();
     }
@@ -61,6 +65,20 @@ public class PlayerController : MonoBehaviour
         movement = orientationCam.transform.forward * InputManager.movementInput.y * moveSpeed + orientationCam.transform.right * InputManager.movementInput.x * moveSpeed;
         movement.y = rb.velocity.y;
         rb.velocity = movement;
+
+        playerPos2 = this.transform.position;
+        if(playerPos2 != playerPos)
+        {
+            playerPos = this.transform.position;
+            if(this.GetComponent<AudioSource>().enabled == false)
+            {
+                this.GetComponent<AudioSource>().enabled = true;
+            }
+        }
+        else
+        {
+            //this.GetComponent<AudioSource>().enabled = false;
+        }
 
         if (HealthBar.health == 0 && isDead == false)
         {

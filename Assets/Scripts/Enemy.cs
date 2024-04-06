@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
         else
         {
             EnemyAnimator.SetBool("isHit", true);
+            AudioManager.Singleton.PlaySoundEffect("ZombieHit");
             //trying to reset
             EnemyAnimator.SetBool("isHit", false);
         }
@@ -97,7 +98,7 @@ public class Enemy : MonoBehaviour
                 EnemyAnimator.SetInteger("randomAttackIndex", attackNum);
                 attackNum = 0;
                 currentAttackWaitTime = 0f;
-                AudioManager.Singleton.PlaySoundEffect("Crowbar");
+                AudioManager.Singleton.PlaySoundEffect("ZombieAttack");
                 
             }
         }
@@ -105,7 +106,7 @@ public class Enemy : MonoBehaviour
         {
             if(HealthBar.health > 0)
             {
-                AudioManager.Singleton.PlaySoundEffect("Oof");
+                AudioManager.Singleton.PlaySoundEffect("Hurt");
                 HealthBar.health -= damage;
                 isWaiting = true;
             }

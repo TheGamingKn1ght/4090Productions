@@ -769,8 +769,23 @@ MonoBehaviour:
   - soundName: Crowbar
     audioClip: {fileID: 8300000, guid: 413757beb18553e479c6d25f531f2c50, type: 3}
     volume: 0.06
-  - soundName: Oof
-    audioClip: {fileID: 8300000, guid: a8b4c3d80d82d264eb78bf3fa04ee540, type: 3}
+  - soundName: Hurt
+    audioClip: {fileID: 8300000, guid: 7fdaae1f0fdcfc2429f060035292705d, type: 3}
+    volume: 0.06
+  - soundName: ZombieAttack
+    audioClip: {fileID: 8300000, guid: 192280db3479c6444a44497fff63838c, type: 3}
+    volume: 0.06
+  - soundName: ZombieHit
+    audioClip: {fileID: 8300000, guid: 5fd731649611c424da8a80ec0937d5cc, type: 3}
+    volume: 0.06
+  - soundName: PlayerBreathing
+    audioClip: {fileID: 8300000, guid: b95ac1c861daf344cb20f66ef997c898, type: 3}
+    volume: 0.06
+  - soundName: HeavyBreathing
+    audioClip: {fileID: 8300000, guid: 350658599cfad2146a9bbf4586ed5384, type: 3}
+    volume: 0.06
+  - soundName: Footsteps
+    audioClip: {fileID: 8300000, guid: 348d2c74545b2584796d4348b2a53416, type: 3}
     volume: 0.06
 --- !u!4 &48097176
 Transform:
@@ -15017,6 +15032,7 @@ GameObject:
   - component: {fileID: 843097795}
   - component: {fileID: 843097796}
   - component: {fileID: 843097797}
+  - component: {fileID: 843097798}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -15224,6 +15240,102 @@ MonoBehaviour:
   TurnSpeed: 2
   playerController: {fileID: 843097793}
   cinemachineCamera: {fileID: 356616564}
+--- !u!82 &843097798
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843097788}
+  m_Enabled: 0
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 348d2c74545b2584796d4348b2a53416, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &844594958 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -685685307045539158, guid: cbfb2336632b1b54183b02d2b89176c6, type: 3}
