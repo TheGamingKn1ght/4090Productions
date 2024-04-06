@@ -6,10 +6,11 @@ public class AudioManager : MonoBehaviour
 {
     #region Singleton
     public static AudioManager Singleton;
+    /*
     private void Start()
     {
         AudioManager.Singleton.PlaySoundEffect("Background Music");
-    }
+    }*/
     public void Awake()
     {
         if (Singleton == null)
