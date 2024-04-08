@@ -29,6 +29,10 @@ public class PlayerController : MonoBehaviour
     public GameObject Pistol;
     public GameObject Crowbar;
 
+    private float footstepsLength = 6.217143f;
+    private float footstepsWaitTime = 0f;
+    private bool isWalking;
+
     Vector3 playerPos;
     Vector3 playerPos2;
 
@@ -66,19 +70,7 @@ public class PlayerController : MonoBehaviour
         movement.y = rb.velocity.y;
         rb.velocity = movement;
 
-        playerPos2 = this.transform.position;
-        if(playerPos2 != playerPos)
-        {
-            playerPos = this.transform.position;
-            if(this.GetComponent<AudioSource>().enabled == false)
-            {
-                this.GetComponent<AudioSource>().enabled = true;
-            }
-        }
-        else
-        {
-            //this.GetComponent<AudioSource>().enabled = false;
-        }
+        walkingSound();
 
         if (HealthBar.health == 0 && isDead == false)
         {
@@ -159,6 +151,34 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void walkingSound()
+    {
+        playerPos2 = this.transform.position;
+        if (playerPos2 != playerPos)// && isWalking == false)
+        {
+            isWalking = true;
+            footstepsWaitTime += Time.deltaTime;
+            if (footstepsWaitTime >= footstepsLength)
+            {
+                isWalking = false;
+                footstepsWaitTime = 0f;
+            }
+            playerPos = this.transform.position;
+            if (this.GetComponent<AudioSource>().enabled == false && isWalking == true)
+            {
+                this.GetComponent<AudioSource>().enabled = true;
+            }
+            else if(isWalking == false)
+            {
+                this.GetComponent<AudioSource>().enabled = false;
+            }
+        }
+        else if (playerPos2 == playerPos && isWalking == false)
+        {
+            this.GetComponent<AudioSource>().enabled = false;
+        }
+    }
+
     private void Heal()
     {
         if (PlayerInventory.singleton.allPotions[0].count > 0)
@@ -223,5 +243,7 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawRay(ray.origin, ray.direction * 20);
         //Gizmos.DrawLine(orientationCam.transform.position, orientationCam.transform.forward * 100);
     }
+
+
 
 }
