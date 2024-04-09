@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public GameObject Pistol;
     public GameObject Crowbar;
 
+    [SerializeField] private AudioSource footsteps;
     private float footstepsLength = 6.217143f;
     private float footstepsWaitTime = 0f;
     private bool isWalking;
@@ -153,30 +154,35 @@ public class PlayerController : MonoBehaviour
 
     private void walkingSound()
     {
-        playerPos2 = this.transform.position;
-        if (playerPos2 != playerPos)// && isWalking == false)
+        footstepsWaitTime += Time.deltaTime;
+        if (footstepsWaitTime >= footstepsLength)
         {
+            isWalking = false;
+            footstepsWaitTime = 0f;
+        }
+
+        playerPos2 = this.transform.position;
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            Debug.Log("yay2");
             isWalking = true;
-            footstepsWaitTime += Time.deltaTime;
-            if (footstepsWaitTime >= footstepsLength)
-            {
-                isWalking = false;
-                footstepsWaitTime = 0f;
-            }
             playerPos = this.transform.position;
-            if (this.GetComponent<AudioSource>().enabled == false && isWalking == true)
+            if (footsteps.enabled == false && isWalking == true)
             {
-                this.GetComponent<AudioSource>().enabled = true;
+                footsteps.enabled = true;
             }
             else if(isWalking == false)
             {
-                this.GetComponent<AudioSource>().enabled = false;
+                footsteps.enabled = false;
             }
+            
         }
-        else if (playerPos2 == playerPos && isWalking == false)
+        else 
         {
-            this.GetComponent<AudioSource>().enabled = false;
+            footsteps.enabled = false;
         }
+
+
     }
 
     private void Heal()

@@ -112,23 +112,14 @@ public class Enemy : MonoBehaviour
             }
             
         }
-        /*
-        RaycastHit hit;
-        if(Physics.Raycast(camPos.transform.position, player.transform.position, out hit, 2))
-        {
-            
-        }
-        */
     }
 
     public void Death()
     {
-        //agent.enabled = false;
         agent.SetDestination(this.transform.position);
         agent.isStopped = true;
         agent.speed = 0;
         EnemyAnimator.SetBool("isDead", true);
-        //character.transform.Translate(Vector3.up);
     }
 
     private int RandomNum()

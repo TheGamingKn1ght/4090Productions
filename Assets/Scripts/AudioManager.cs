@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     private List<AudioSource> audioSources = new List<AudioSource>();
-    [SerializeField] SoundEffect[] soundEffects;
+    [SerializeField] public SoundEffect[] soundEffects;
 
     private AudioSource CreateAudioSource()
     {

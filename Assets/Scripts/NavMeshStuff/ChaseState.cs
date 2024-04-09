@@ -17,6 +17,7 @@ public class ChaseState : IState
         Debug.Log("Animation Chasing");
         aiController.agent.speed = 3;
         aiController.GetComponent<Enemy>().EnemyAnimator.SetBool("isChasing", true);
+        aiController.GetComponent<AudioSource>().clip = AudioManager.Singleton.soundEffects[11].audioClip;
     }
 
     public void Execute()
@@ -32,6 +33,7 @@ public class ChaseState : IState
     public void Exit()
     {
         aiController.GetComponent<Enemy>().EnemyAnimator.SetBool("isChasing", false);
+        aiController.GetComponent<AudioSource>().clip = AudioManager.Singleton.soundEffects[12].audioClip;
     }
 
 }
