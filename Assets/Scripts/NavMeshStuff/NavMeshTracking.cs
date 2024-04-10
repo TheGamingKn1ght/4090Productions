@@ -102,16 +102,5 @@ public class NavMeshTracking : MonoBehaviour
         NavMeshHit hit;
         NavMesh.SamplePosition(waypoint, out hit, maxWalkRadius, 1);
         return hit.position;
-        /*
-        for (int i = 0; i < 5; i++)
-        {
-            Vector3 randomDirection = Random.insideUnitSphere * maxWalkRadius;
-            waypoints[i] = randomDirection;
-            waypoints[i] += transform.position;
-            NavMeshHit hit;
-            NavMesh.SamplePosition(waypoints[i], out hit, maxWalkRadius, 1);
-            finalPosition = hit.position;
-        }
-        */
     }
 }

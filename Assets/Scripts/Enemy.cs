@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] public Animator EnemyAnimator;
 
-    public float impactForce = 500;
+    public bool isDead;
 
     public void TakeDamage(int damage)
     {
@@ -99,7 +99,6 @@ public class Enemy : MonoBehaviour
                 attackNum = 0;
                 currentAttackWaitTime = 0f;
                 AudioManager.Singleton.PlaySoundEffect("ZombieAttack");
-                
             }
         }
         else
@@ -120,6 +119,7 @@ public class Enemy : MonoBehaviour
         agent.isStopped = true;
         agent.speed = 0;
         EnemyAnimator.SetBool("isDead", true);
+        this.isDead = true;
     }
 
     private int RandomNum()
