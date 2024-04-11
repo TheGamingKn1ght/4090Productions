@@ -18,6 +18,7 @@ public class InputManager : MonoBehaviour
     public static event System.Action OnInventoryInput;
     public static event System.Action OnHealInput;
     public static event System.Action OnSpeedInput;
+    public static event System.Action OnPauseInput;
 
     private void Awake()
     {
@@ -41,7 +42,9 @@ public class InputManager : MonoBehaviour
         
         controls.Player.Heal.performed += ctx => OnHealInput?.Invoke();
         controls.Player.Speed.performed += ctx => OnSpeedInput?.Invoke();
-        
+
+        controls.Player.Pause.performed += ctx => OnPauseInput?.Invoke();
+
         controls.Player.Enable();
     }
     void OnDisable()
