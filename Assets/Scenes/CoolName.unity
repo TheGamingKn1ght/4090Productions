@@ -36710,28 +36710,14 @@ GameObject:
   - component: {fileID: 1995811384}
   - component: {fileID: 1995811383}
   - component: {fileID: 1995811382}
-  - component: {fileID: 1995811381}
+  - component: {fileID: 1995811386}
   m_Layer: 0
-  m_Name: Note (DIEGO DO NOT DELETE I SWEAR)
+  m_Name: 'Note '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1995811381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995811378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 004ef5c663d911c458c5bfcf6fd9c6fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NotePanel: {fileID: 0}
-  cinemachineCamera: {fileID: 356616564}
 --- !u!65 &1995811382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36747,7 +36733,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -36818,6 +36804,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1995811386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995811378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d68f9b2edef2064caaa6cb5ea9defc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NoteStrings:
+  - text: Note 1
+    isEnd: 0
+    isQuestion: 0
+    answerOption1: 
+    option1IndexJump: 0
+    startNoteEvents:
+      m_PersistentCalls:
+        m_Calls: []
+    endNoteEvents:
+      m_PersistentCalls:
+        m_Calls: []
+  NPCTransform: {fileID: 1995811385}
+  Note: {fileID: 1995811378}
 --- !u!1 &1999748496 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3095618658875140865, guid: cbfb2336632b1b54183b02d2b89176c6, type: 3}
@@ -36999,7 +37011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &2007008936
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37111,6 +37123,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   NPCTransform: {fileID: 1995811385}
+  Note: {fileID: 0}
 --- !u!1 &2007349348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2326993791942127757, guid: cbfb2336632b1b54183b02d2b89176c6, type: 3}
