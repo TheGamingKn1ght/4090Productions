@@ -7,6 +7,7 @@ public class NoteTrigger : MonoBehaviour
 {
     [SerializeField] private List<NoteString> NoteStrings = new List<NoteString>();
     [SerializeField] private Transform NPCTransform;
+    [SerializeField] private GameObject Note;
 
     private bool hadSpooken = false;
 
@@ -17,7 +18,13 @@ public class NoteTrigger : MonoBehaviour
             other.gameObject.GetComponent<NoteManager>().NoteStart(NoteStrings, NPCTransform);
             hadSpooken = true;
 
+            Destroy(Note, 1);
         }
+    }
+
+    public void DestroyNote(BoxCollider col)
+    {
+        Destroy(col);
     }
 }
 [System.Serializable]
