@@ -15,11 +15,18 @@ public class CraftingStation : AbstractInteractable
     public CinemachineVirtualCamera cinemachineCamera;
     public static RecipeSO currentRecipe;
 
+    [SerializeField] PlayerController playerController;
+
     public void ToggleCrafting()
     {
         if (CraftingPanel != null)
         {
             CraftingPanel.SetActive(!CraftingPanel.activeSelf);
+        }
+
+        if (CraftingPanel.activeSelf)
+        {
+            UIManager.Singleton.PauseGame();
         }
     }
 
@@ -45,19 +52,36 @@ public class CraftingStation : AbstractInteractable
         }
     }
 
-    void Update()
+    public void Resume()
     {
+        CraftingPanel.SetActive(false);
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        cinemachineCamera.enabled = true;
+        Debug.Log("Game is not paused!!!");
+    }
+    void Pause()
+    {
+
+        CraftingPanel.SetActive(true);
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        cinemachineCamera.enabled = false;
+        Debug.Log("the game is paused!!!");
+    }
+
+        void Update()
+    {
+        /*
         if(CraftingPanel.activeInHierarchy)
         {
-            Cursor.lockState = CursorLockMode.None; 
-            Cursor.visible = true;
-            cinemachineCamera.enabled = false;
+            Pause();
         }
         else
         {
-            Cursor.lockState = CursorLockMode.Locked; 
-            Cursor.visible = false;
-            cinemachineCamera.enabled = true;
-        }
+            Resume();
+        }*/
     }
 }

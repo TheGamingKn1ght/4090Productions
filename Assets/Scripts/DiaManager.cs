@@ -36,9 +36,9 @@ public class DiaManager : MonoBehaviour
         dialogueParent.SetActive(true);
         playerController.enabled = false;
 
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        cinemachineCamera.enabled = false;
+        //Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
+        //cinemachineCamera.enabled = false;
 
         StartCoroutine(TurnCameraTowardsNPC(NPC));
 
@@ -137,12 +137,13 @@ public class DiaManager : MonoBehaviour
 
         playerController.enabled = true;
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
     void Update()
     {
+        /*
         if (dialogueParent.activeInHierarchy)
         {
             Cursor.lockState = CursorLockMode.None;
@@ -155,6 +156,6 @@ public class DiaManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             cinemachineCamera.enabled = true;
-        }
+        }*/
     }
 }

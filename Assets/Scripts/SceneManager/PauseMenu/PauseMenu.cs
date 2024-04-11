@@ -24,6 +24,7 @@ public class PauseMenu : MonoBehaviour
     }
     void Update()
     {
+        /*
         if (pauseCanvas.gameObject.activeInHierarchy)
         {
             Cursor.lockState = CursorLockMode.None;
@@ -37,7 +38,7 @@ public class PauseMenu : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             Time.timeScale = 1f;
-        }
+        }*/
     }
 
     public void Pause()

@@ -97,7 +97,6 @@ public class PlayerController : MonoBehaviour
     {
         if (Pistol.activeSelf)
         {
-            Debug.Log("Pistol is active Self");
             if (Pistol != null)
             {
                 AudioManager.Singleton.PlaySoundEffect("Pistol Shot");
@@ -112,7 +111,6 @@ public class PlayerController : MonoBehaviour
                     Enemy enemy = hit.transform.GetComponent<Enemy>();
                     if (enemy != null)
                     {
-                        Debug.Log("Yay");
                         enemy.TakeDamage(50);
                     }
                 }
@@ -126,8 +124,22 @@ public class PlayerController : MonoBehaviour
                 AudioManager.Singleton.PlaySoundEffect("Crowbar");
                 Debug.Log("Crowbar");
                 RaycastHit hit;
-                if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, meleeRange))
+
+                /*if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, meleeRange))
                 {
+                    Enemy enemy = hit.transform.GetComponent<Enemy>();
+                    if (enemy != null)
+                    {
+                        enemy.TakeDamage(35);
+                    }
+                }*/
+
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit, meleeRange))
+                {
+                    Debug.Log(hit.transform.gameObject.name);
+
                     Enemy enemy = hit.transform.GetComponent<Enemy>();
                     if (enemy != null)
                     {
@@ -165,7 +177,6 @@ public class PlayerController : MonoBehaviour
         playerPos2 = this.transform.position;
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
-            Debug.Log("yay2");
             isWalking = true;
             playerPos = this.transform.position;
             if (footsteps.enabled == false && isWalking == true)
@@ -250,7 +261,5 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawRay(ray.origin, ray.direction * 20);
         //Gizmos.DrawLine(orientationCam.transform.position, orientationCam.transform.forward * 100);
     }
-
-
 
 }

@@ -215,6 +215,7 @@ MonoBehaviour:
   damage: 0
   health: 100
   EnemyAnimator: {fileID: 0}
+  BodyCollider: {fileID: 0}
   isDead: 0
 --- !u!54 &3006386
 Rigidbody:
@@ -4276,6 +4277,51 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.4346988, y: -4.271679, z: -5.2655964}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &259798899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 259798901}
+  - component: {fileID: 259798900}
+  m_Layer: 0
+  m_Name: UI Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &259798900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259798899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1f57a8ae543184baf839aa6aa96a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cinemachineCamera: {fileID: 356616564}
+--- !u!4 &259798901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259798899}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.373962, y: 32.94394, z: 157.2244}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11409,6 +11455,7 @@ MonoBehaviour:
   Ingredient2: {fileID: 449265821}
   CraftButton: {fileID: 663141368}
   cinemachineCamera: {fileID: 356616564}
+  playerController: {fileID: 843097793}
 --- !u!65 &636622996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22528,6 +22575,7 @@ MonoBehaviour:
   damage: 0
   health: 100
   EnemyAnimator: {fileID: 0}
+  BodyCollider: {fileID: 0}
   isDead: 0
 --- !u!1 &1221514112 stripped
 GameObject:
@@ -25811,6 +25859,60 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4651867969615287578, guid: f2cd5bc36f9085341a1d340103a98718, type: 3}
+--- !u!1 &1423486841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1423486842}
+  - component: {fileID: 1423486843}
+  m_Layer: 0
+  m_Name: BodyCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1423486842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423486841}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 864251785}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1423486843
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423486841}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2548443371274435268, guid: 56727ffe762275c44a0a099075fddd58, type: 3}
 --- !u!1 &1427571782 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6559277073696486826, guid: cbfb2336632b1b54183b02d2b89176c6, type: 3}
@@ -37717,6 +37819,7 @@ MonoBehaviour:
   damage: 0
   health: 100
   EnemyAnimator: {fileID: 0}
+  BodyCollider: {fileID: 0}
   isDead: 0
 --- !u!54 &2024043923
 Rigidbody:
@@ -37848,6 +37951,7 @@ MonoBehaviour:
   Ingredient2: {fileID: 0}
   CraftButton: {fileID: 54467721}
   cinemachineCamera: {fileID: 356616564}
+  playerController: {fileID: 0}
 --- !u!1 &2036315195 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1916535956126141061, guid: f2cd5bc36f9085341a1d340103a98718, type: 3}
@@ -39226,6 +39330,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6977292323058788196, guid: cbec1a828df12f547ab47361110ad7e6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7364289059378756702, guid: cbec1a828df12f547ab47361110ad7e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5298443
@@ -39313,6 +39421,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1274888372}
     m_Modifications:
+    - target: {fileID: 406976723623867916, guid: e2914715b84fd0a43851b8c80b1e36ac, type: 3}
+      propertyPath: BodyCollider
+      value: 
+      objectReference: {fileID: 1423486843}
+    - target: {fileID: 4726985316097748390, guid: e2914715b84fd0a43851b8c80b1e36ac, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835735271666029037, guid: e2914715b84fd0a43851b8c80b1e36ac, type: 3}
+      propertyPath: m_Height
+      value: 2.5135345
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835735271666029037, guid: e2914715b84fd0a43851b8c80b1e36ac, type: 3}
+      propertyPath: m_Radius
+      value: 0.40382624
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835735271666029037, guid: e2914715b84fd0a43851b8c80b1e36ac, type: 3}
+      propertyPath: m_Center.x
+      value: 0.0135355
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835735271666029037, guid: e2914715b84fd0a43851b8c80b1e36ac, type: 3}
+      propertyPath: m_Center.y
+      value: 0.8145828
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835735271666029037, guid: e2914715b84fd0a43851b8c80b1e36ac, type: 3}
+      propertyPath: m_Center.z
+      value: 0.024091244
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835735271666029037, guid: e2914715b84fd0a43851b8c80b1e36ac, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835735271666029037, guid: e2914715b84fd0a43851b8c80b1e36ac, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7344098460265991819, guid: e2914715b84fd0a43851b8c80b1e36ac, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.565
@@ -39357,13 +39501,21 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 4627984019347488439, guid: 353e07807c9df684a8d333f23a06a3df, type: 3}
+    - target: {fileID: 7440423847550970723, guid: e2914715b84fd0a43851b8c80b1e36ac, type: 3}
+      propertyPath: CloseUpCollider
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7971558322200745009, guid: e2914715b84fd0a43851b8c80b1e36ac, type: 3}
       propertyPath: m_Name
       value: Enemy 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5835735271666029037, guid: e2914715b84fd0a43851b8c80b1e36ac, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7344098460265991819, guid: e2914715b84fd0a43851b8c80b1e36ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1423486842}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2914715b84fd0a43851b8c80b1e36ac, type: 3}
 --- !u!1001 &6565876518632224276
@@ -39479,6 +39631,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 703819675790536188}
     - target: {fileID: 8767167820065371449, guid: 353e07807c9df684a8d333f23a06a3df, type: 3}
+      propertyPath: UIcanvas
+      value: 
+      objectReference: {fileID: 1028826541}
+    - target: {fileID: 8767167820065371449, guid: 353e07807c9df684a8d333f23a06a3df, type: 3}
       propertyPath: FadePlayer
       value: 
       objectReference: {fileID: 1654830979}
@@ -39486,6 +39642,10 @@ PrefabInstance:
       propertyPath: orientationCam
       value: 
       objectReference: {fileID: 963194228}
+    - target: {fileID: 8767167820065371449, guid: 353e07807c9df684a8d333f23a06a3df, type: 3}
+      propertyPath: InventoryCanvas
+      value: 
+      objectReference: {fileID: 1028826541}
     - target: {fileID: 8767167820065371449, guid: 353e07807c9df684a8d333f23a06a3df, type: 3}
       propertyPath: QuadVideoPlayer
       value: 
@@ -39527,3 +39687,4 @@ SceneRoots:
   - {fileID: 1995811385}
   - {fileID: 2007008939}
   - {fileID: 1800208709}
+  - {fileID: 259798901}

@@ -19,11 +19,15 @@ public class Enemy : MonoBehaviour
     private int attackNum = 0;
 
     [SerializeField] public Animator EnemyAnimator;
+    [SerializeField] public MeshCollider BodyCollider;
 
     public bool isDead;
     public static event Action OnEnemyDeath;
+
+
     public void TakeDamage(int damage)
     {
+        Debug.Log("Damage taken");
         health -= damage;
         if (health <= 0)
         {
@@ -68,7 +72,7 @@ public class Enemy : MonoBehaviour
             attackNum = RandomNum();
         }
         if (isWaiting)
-        {/*
+        {
             switch (attackNum)
             {
                 case 1:
@@ -82,7 +86,7 @@ public class Enemy : MonoBehaviour
                     break;
             }
             Debug.Log("Wait: " + AttackWaitTime);
-            */
+            /*
             foreach(KeyValuePair<int, int> vals in attackWaitTimes)
             {
                 if(attackNum == vals.Key)
@@ -90,6 +94,7 @@ public class Enemy : MonoBehaviour
                     AttackWaitTime = vals.Value;
                 }
             }
+            */
             
             currentAttackWaitTime += Time.deltaTime;
             if(currentAttackWaitTime >= AttackWaitTime)
@@ -116,13 +121,20 @@ public class Enemy : MonoBehaviour
 
     public void Death()
     {
+        BodyCollider.isTrigger = true;
         agent.SetDestination(this.transform.position);
         agent.isStopped = true;
         agent.speed = 0;
         EnemyAnimator.SetBool("isDead", true);
         this.isDead = true;
-        //Destroy(enemy);
+        StartCoroutine(DestroyBodyTimer());
         OnEnemyDeath?.Invoke();
+    }
+
+    IEnumerator DestroyBodyTimer()
+    {
+        yield return new WaitForSecondsRealtime(5);
+        Destroy(this.gameObject);
     }
 
     private int RandomNum()
