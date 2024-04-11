@@ -25869,6 +25869,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1423486842}
   - component: {fileID: 1423486843}
+  - component: {fileID: 1423486844}
   m_Layer: 0
   m_Name: BodyCollider
   m_TagString: Untagged
@@ -25913,6 +25914,29 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2548443371274435268, guid: 56727ffe762275c44a0a099075fddd58, type: 3}
+--- !u!136 &1423486844
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423486841}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.55
+  m_Height: 1.87
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.13, z: 0}
 --- !u!1 &1427571782 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6559277073696486826, guid: cbfb2336632b1b54183b02d2b89176c6, type: 3}
