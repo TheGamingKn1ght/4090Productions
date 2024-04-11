@@ -16,6 +16,8 @@ public class MainMenuManager : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         priorityQueue = new List<CinemachineVirtualCamera>();
         priorityQueue.Add(MainView);
         priorityQueue.Add(PlayView);

@@ -97,6 +97,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Pistol.activeSelf)
         {
+            Debug.Log("Pistol is active Self");
             if (Pistol != null)
             {
                 AudioManager.Singleton.PlaySoundEffect("Pistol Shot");
@@ -148,7 +149,7 @@ public class PlayerController : MonoBehaviour
         else if (InputManager.controls.Player.Scroll.ReadValue<float>() <= -1)
         {
             Pistol.SetActive(false);
-            Crowbar.SetActive(true); ;
+            Crowbar.SetActive(true);
         }
     }
 

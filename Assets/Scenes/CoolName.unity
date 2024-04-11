@@ -18527,6 +18527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseCanvas: {fileID: 1162796587}
+  player: {fileID: 843097793}
 --- !u!1 &985204592 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 103192043210534349, guid: cbfb2336632b1b54183b02d2b89176c6, type: 3}
