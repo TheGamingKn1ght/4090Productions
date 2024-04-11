@@ -11,6 +11,16 @@ public class EnemySpawning : MonoBehaviour
 
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
     [SerializeField] private List<GameObject> enemyList = new List<GameObject>();
+
+    private void OnEnable()
+    {
+        Enemy.OnEnemyDeath += KillEnemy;
+    }
+
+    private void OnDisable()
+    {
+        Enemy.OnEnemyDeath -= KillEnemy;
+    }
     private void Start()
     {
         currentEnemyCount = 0;
@@ -27,16 +37,10 @@ public class EnemySpawning : MonoBehaviour
                 currentEnemyCount++;
             }
         }
-        /*
-        foreach(var enemy in enemyList)
-        {
-            if (enemy.GetComponent<Enemy>().isDead == true)
-            {
-                Destroy(enemy);
-                currentEnemyCount--;
-            }
-        }
-        */
     }
 
+    private void KillEnemy()
+    {
+        currentEnemyCount--;
+    }
 }

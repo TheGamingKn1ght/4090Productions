@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System;
 
 public class Enemy : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] public Animator EnemyAnimator;
 
     public bool isDead;
-
+    public static event Action OnEnemyDeath;
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -120,11 +121,13 @@ public class Enemy : MonoBehaviour
         agent.speed = 0;
         EnemyAnimator.SetBool("isDead", true);
         this.isDead = true;
+        //Destroy(enemy);
+        OnEnemyDeath?.Invoke();
     }
 
     private int RandomNum()
     {
-        int num = Random.Range(0,4);
+        int num = UnityEngine.Random.Range(0,4);
         return num;
     }
 }
