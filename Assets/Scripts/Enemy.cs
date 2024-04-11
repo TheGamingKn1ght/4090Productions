@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
             attackNum = RandomNum();
         }
         if (isWaiting)
-        {
+        {/*
             switch (attackNum)
             {
                 case 1:
@@ -81,15 +81,15 @@ public class Enemy : MonoBehaviour
                     break;
             }
             Debug.Log("Wait: " + AttackWaitTime);
-            /*
+            */
             foreach(KeyValuePair<int, int> vals in attackWaitTimes)
             {
                 if(attackNum == vals.Key)
                 {
-                    attackWaitTimes = vals.Key;
+                    AttackWaitTime = vals.Value;
                 }
             }
-            */
+            
             currentAttackWaitTime += Time.deltaTime;
             if(currentAttackWaitTime >= AttackWaitTime)
             {
