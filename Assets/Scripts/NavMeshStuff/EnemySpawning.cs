@@ -34,6 +34,7 @@ public class EnemySpawning : MonoBehaviour
                 Vector3 spawn = new Vector3(spawnpoint.transform.position.x, spawnpoint.transform.position.y, spawnpoint.transform.position.z);
                 Instantiate(enemyPrefab, spawn, Quaternion.identity);
                 enemyList.Add(enemyPrefab);
+                Debug.Log("Spawning Enemy");
                 currentEnemyCount++;
             }
         }
