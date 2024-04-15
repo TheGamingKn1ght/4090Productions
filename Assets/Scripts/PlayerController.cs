@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     //Weapon Ranges
     public float gunRange = 100f;
     public float meleeRange = 10f;
+    public Quest quest;
+
 
     Rigidbody rb;
     [SerializeField] GroundCheck groundCheck;
