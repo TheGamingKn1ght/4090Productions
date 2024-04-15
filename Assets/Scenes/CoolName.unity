@@ -1455,81 +1455,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2477511411847689622, guid: f2cd5bc36f9085341a1d340103a98718, type: 3}
---- !u!1001 &68177019
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1995840647}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9.13
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -30.433
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 70.9
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 270
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_Name
-      value: paper_and_tablet (12)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 989810449}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 989810448}
-  m_SourcePrefab: {fileID: 100100000, guid: 984b08a09d20eed479bb783177208d83, type: 3}
 --- !u!1 &72918043 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8025316411311264043, guid: cbfb2336632b1b54183b02d2b89176c6, type: 3}
@@ -1736,7 +1661,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoteStrings:
-  - text: Note #1
+  - text: 'Note #1  Progress to the new medicine is going smoothly, it seems to be
+      working on the rat with excellent efficiency, fingers crossed it works on humans. '
     isEnd: 1
     isQuestion: 0
     answerOption1: 
@@ -6003,16 +5929,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333724645}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.0148508875, y: -0, z: -0, w: 0.99988973}
+  m_LocalPosition: {x: 0, y: 0, z: 4}
+  m_LocalScale: {x: 2.4000003, y: 2.4, z: 2.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 885119724}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 724169463}
+  m_LocalEulerAnglesHint: {x: -1.702, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -307.94946, y: 243.19202}
+  m_AnchoredPosition: {x: -830.095, y: 438}
   m_SizeDelta: {x: 174.2153, y: 72.5807}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &333724647
@@ -6618,7 +6544,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355336583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6626,7 +6552,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 60, y: -60}
+  m_AnchoredPosition: {x: -5, y: -114}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &355336585
@@ -7090,16 +7016,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379571316}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.007176147, y: -0, z: -0, w: 0.99997425}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalScale: {x: 2.4, y: 2.4, z: 2.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 885119724}
+  m_Father: {fileID: 724169463}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -213.5, y: 215.4}
+  m_AnchoredPosition: {x: -566, y: 399}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &379571318
@@ -7122,7 +7048,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: /13
+  m_text: /11
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7185,7 +7111,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 5.3484097, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -11362,7 +11288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.7376413, y: -138.1911}
+  m_AnchoredPosition: {x: -7, y: -149.1}
   m_SizeDelta: {x: 607.6736, y: 131.7296}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &613045100
@@ -15432,18 +15358,21 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724169459}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3977351, y: 0.3678851, z: 0.3678851}
+  m_LocalRotation: {x: -0.007176147, y: -0, z: -0, w: 0.99997425}
+  m_LocalPosition: {x: 0, y: 0, z: 1.1326}
+  m_LocalScale: {x: 0.4166667, y: 0.4166667, z: 0.4166667}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 333724646}
   - {fileID: 1812947726}
   - {fileID: 355336584}
-  m_Father: {fileID: 1028826538}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  - {fileID: 2057791989}
+  - {fileID: 379571317}
+  m_Father: {fileID: 885119724}
+  m_LocalEulerAnglesHint: {x: -0.822, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 382.5, y: 293.4}
+  m_AnchoredPosition: {x: 437.92346, y: 218.17615}
   m_SizeDelta: {x: 1920, y: 1069.7144}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &724756447 stripped
@@ -17770,7 +17699,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoteStrings:
-  - text: Note #4
+  - text: "Note 6#  The \"medicine\u201D was quite simple to make actually. All you
+      really need to make it was some normal household items but bio, I can't remember
+      which one he used, there are a few of them. Going to have to snoop around and
+      find out or I could just ask him but what's the fun in that "
     isEnd: 1
     isQuestion: 0
     answerOption1: 
@@ -18188,8 +18120,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.269, y: -35.4}
-  m_SizeDelta: {x: 575, y: 429.37}
+  m_AnchoredPosition: {x: -1, y: -2}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &865173680
 MonoBehaviour:
@@ -18555,7 +18487,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoteStrings:
-  - text: Note #4
+  - text: 'Note #5  Oh Stan, you have no idea what is coming for you buddy. You may
+      have done almost all the work but it''s my glory, not everyone can be a winner. '
     isEnd: 1
     isQuestion: 0
     answerOption1: 
@@ -18694,9 +18627,7 @@ RectTransform:
   - {fileID: 2016480727}
   - {fileID: 1028826538}
   - {fileID: 521613166}
-  - {fileID: 2057791989}
-  - {fileID: 379571317}
-  - {fileID: 333724646}
+  - {fileID: 724169463}
   - {fileID: 212525259}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18942,8 +18873,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 382.5, y: -319.4}
-  m_SizeDelta: {x: 575, y: 429.3764}
+  m_AnchoredPosition: {x: 386, y: -247}
+  m_SizeDelta: {x: 420, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &898143773
 MonoBehaviour:
@@ -21300,7 +21231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &983079474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21600,63 +21531,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989384317}
   m_CullTransparentMesh: 1
---- !u!1 &989810446 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-  m_PrefabInstance: {fileID: 68177019}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &989810447 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-  m_PrefabInstance: {fileID: 68177019}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &989810448
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 989810446}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.2, y: 0.29, z: 0.06}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &989810449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 989810446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d68f9b2edef2064caaa6cb5ea9defc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NoteStrings:
-  - text: Note #4
-    isEnd: 1
-    isQuestion: 0
-    answerOption1: 
-    option1IndexJump: 0
-    startNoteEvents:
-      m_PersistentCalls:
-        m_Calls: []
-    endNoteEvents:
-      m_PersistentCalls:
-        m_Calls: []
-  NPCTransform: {fileID: 1841575348}
-  Note: {fileID: 989810446}
 --- !u!1 &991495737 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3919796887962296046, guid: f2cd5bc36f9085341a1d340103a98718, type: 3}
@@ -22403,12 +22277,11 @@ RectTransform:
   - {fileID: 805749710}
   - {fileID: 898143772}
   - {fileID: 613045099}
-  - {fileID: 724169463}
   m_Father: {fileID: 885119724}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 19.800049, y: 23.400024}
+  m_AnchoredPosition: {x: 19.800049, y: 23.399902}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1028826539
@@ -24801,81 +24674,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9056884185424794269, guid: 6f65d5dfb94c7cd4fbdb0841de530057, type: 3}
   m_PrefabInstance: {fileID: 1141487341}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1142460871
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1995840647}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 194.23
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -30.433
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 70.9
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 270
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      propertyPath: m_Name
-      value: paper_and_tablet (11)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1715655163}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1715655162}
-  m_SourcePrefab: {fileID: 100100000, guid: 984b08a09d20eed479bb783177208d83, type: 3}
 --- !u!1 &1143413023 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2764512629625626004, guid: f2cd5bc36f9085341a1d340103a98718, type: 3}
@@ -24974,7 +24772,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoteStrings:
-  - text: Note #2
+  - text: 'Note #3   The majority of the medical findings was my partner Stan Bay.
+      If thus get released I know for a fact he will get all the credit and I will
+      get nothing in return. I have to find a way to change that, it''s my creation,
+      I want the glory. '
     isEnd: 1
     isQuestion: 0
     answerOption1: 
@@ -25988,7 +25789,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoteStrings:
-  - text: Note #4
+  - text: 'Note #9  I''m getting award after award, this is amazing and to think
+      all I had to do was smack my co worker behind the head and claim all of his
+      hard work for myself. '
     isEnd: 1
     isQuestion: 0
     answerOption1: 
@@ -28146,7 +27949,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoteStrings:
-  - text: Note #4
+  - text: 'Note #7  I ..I..I.. I know how to get Humm. How do I say this nicely,
+      I know how to dispose of Stan. Whenever the medicine gets released, I''m going
+      to lock him up in the closet. Going to have to use some force because there
+      is no way he''s going to follow me inside, hmmm how about if I lightly smack
+      him over the head with this crowbar, I''m sure it won''t hurt too much. '
     isEnd: 1
     isQuestion: 0
     answerOption1: 
@@ -31860,7 +31667,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoteStrings:
-  - text: Note #4
+  - text: 'Note #8  Stan is knocked out, I may have hit him a little too hard but
+      it''s okay, I don''t need him anymore. '
     isEnd: 1
     isQuestion: 0
     answerOption1: 
@@ -34745,7 +34553,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoteStrings:
-  - text: Note #4
+  - text: "Note #10  The \u201Cmedication\u201D seems to be giving some people weird
+      problems, I'm sure it will be fine and besides this new virus everyone is all
+      the talk right now. I wonder if the medicine was the cause. "
     isEnd: 1
     isQuestion: 0
     answerOption1: 
@@ -34866,63 +34676,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300894436688969492, guid: cbfb2336632b1b54183b02d2b89176c6, type: 3}
---- !u!1 &1715655160 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-  m_PrefabInstance: {fileID: 1142460871}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1715655161 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 984b08a09d20eed479bb783177208d83, type: 3}
-  m_PrefabInstance: {fileID: 1142460871}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1715655162
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715655160}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.2, y: 0.29, z: 0.06}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1715655163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715655160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d68f9b2edef2064caaa6cb5ea9defc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NoteStrings:
-  - text: Note #4
-    isEnd: 1
-    isQuestion: 0
-    answerOption1: 
-    option1IndexJump: 0
-    startNoteEvents:
-      m_PersistentCalls:
-        m_Calls: []
-    endNoteEvents:
-      m_PersistentCalls:
-        m_Calls: []
-  NPCTransform: {fileID: 1841575348}
-  Note: {fileID: 1715655160}
 --- !u!1 &1717774513 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4344899237426878700, guid: f2cd5bc36f9085341a1d340103a98718, type: 3}
@@ -36923,7 +36676,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812947725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -36931,7 +36684,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 225, y: -30}
+  m_AnchoredPosition: {x: 167, y: -89}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1812947727
@@ -37754,7 +37507,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoteStrings:
-  - text: Note #2
+  - text: 'Note #2 The medicine has a few of the rats actually a little weird, I''ll
+      just hide them. This new medicine is going to make me rich, I can just imagine
+      all the money I''ll be getting. '
     isEnd: 1
     isQuestion: 0
     answerOption1: 
@@ -38729,7 +38484,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoteStrings:
-  - text: Note #1
+  - text: 'Note #1  Progress to the new medicine is going smoothly, it seems to be
+      working on the rat with excellent efficiency, fingers crossed it works on humans. '
     isEnd: 1
     isQuestion: 0
     answerOption1: 
@@ -42557,7 +42313,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoteStrings:
-  - text: Note #4
+  - text: "Note #11 The medicine was definitely the cause, it was supposed to make
+      you live longer and cure most common illnesses but it's having a weird interaction
+      with human blood just like the rats blood. I wonder if it's the Bio\u2026 bio..
+      I think bio121. If only I could talk to Stan he would know. "
     isEnd: 1
     isQuestion: 0
     answerOption1: 
@@ -42665,8 +42424,6 @@ Transform:
   - {fileID: 1215673120}
   - {fileID: 1711026141}
   - {fileID: 1994001262}
-  - {fileID: 1715655161}
-  - {fileID: 989810447}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1999748496 stripped
@@ -43829,16 +43586,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057791988}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.007176147, y: -0, z: -0, w: 0.99997425}
+  m_LocalPosition: {x: 0, y: 0, z: 4}
+  m_LocalScale: {x: 2.4, y: 2.4, z: 2.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 885119724}
+  m_Father: {fileID: 724169463}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -295.8733, y: 258.19244}
+  m_AnchoredPosition: {x: -801.1122, y: 479}
   m_SizeDelta: {x: 190.1113, y: 42.5835}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057791990
@@ -44873,7 +44630,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoteStrings:
-  - text: Note #4
+  - text: 'Note #4  Update: most of the rats ended up really really sick, I replaced
+      the original rats with healthy ones so that they think it worked. I''m going
+      to be filthy rich, I can feel it. I just need a way to get rid of Stan. '
     isEnd: 1
     isQuestion: 0
     answerOption1: 
