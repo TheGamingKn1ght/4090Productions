@@ -19,6 +19,14 @@ public class NoteTrigger : MonoBehaviour
             hadSpooken = true;
 
             Destroy(Note, 1);
+
+            NoteInventory noteInventory = other.gameObject.GetComponent<NoteInventory>();
+
+            if(noteInventory != null)
+            {
+                noteInventory.NotesCollected();
+                gameObject.SetActive(false);
+            }
         }
     }
 
