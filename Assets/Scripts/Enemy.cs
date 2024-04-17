@@ -70,7 +70,6 @@ public class Enemy : MonoBehaviour
         {
             attackNum = RandomNum();
             EnemyAnimator.SetInteger("randomAttackIndex", attackNum);
-            AudioManager.Singleton.PlaySoundEffect("ZombieAttack");
             AudioManager.Singleton.PlaySoundEffect("Hurt");
             HealthBar.health -= damage;
         }
