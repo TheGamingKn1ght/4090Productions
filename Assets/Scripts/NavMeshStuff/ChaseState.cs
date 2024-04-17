@@ -17,13 +17,13 @@ public class ChaseState : IState
         Debug.Log("Animation Chasing");
         aiController.agent.speed = 3;
         aiController.GetComponent<Enemy>().EnemyAnimator.SetBool("isChasing", true);
-        aiController.GetComponent<AudioSource>().clip = AudioManager.Singleton.soundEffects[11].audioClip;
+        //aiController.GetComponent<AudioSource>().clip = AudioManager.Singleton.soundEffects[11].audioClip;
     }
 
     public void Execute()
     {
         //Chasing code
-        if (aiController.agent.GetComponent<NavMeshAgent>().isActiveAndEnabled && aiController.canSeePlayer)
+        if (aiController.canSeePlayer)
         {
             //Chasing
             aiController.agent.SetDestination(aiController.target.transform.position);
@@ -33,7 +33,7 @@ public class ChaseState : IState
     public void Exit()
     {
         aiController.GetComponent<Enemy>().EnemyAnimator.SetBool("isChasing", false);
-        aiController.GetComponent<AudioSource>().clip = AudioManager.Singleton.soundEffects[12].audioClip;
+        //aiController.GetComponent<AudioSource>().clip = AudioManager.Singleton.soundEffects[12].audioClip;
     }
 
 }

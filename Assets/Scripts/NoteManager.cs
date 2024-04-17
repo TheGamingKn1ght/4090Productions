@@ -139,8 +139,9 @@ public class NoteManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        cinemachineCamera.enabled = true;
     }
-
+    /*
     void Update()
     {
         if (NoteParent.activeInHierarchy)
@@ -157,4 +158,5 @@ public class NoteManager : MonoBehaviour
             cinemachineCamera.enabled = true;
         }
     }
+    */
 }

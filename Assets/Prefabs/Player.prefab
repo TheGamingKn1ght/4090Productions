@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 1572503095012859758}
   - component: {fileID: 5009820107791354397}
   - component: {fileID: 5289714608446946245}
+  - component: {fileID: 3477459699411729558}
+  - component: {fileID: 7379354905493494727}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -34,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 2841547766438956892}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.29, y: 32.094, z: 152.16}
+  m_LocalPosition: {x: 30.027, y: 1.524, z: 270.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -128,6 +130,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunRange: 10
   meleeRange: 2
+  quest:
+    isActive: 0
+    title: 
+    description: 
   groundCheck: {fileID: 6749589052924849994}
   moveSpeed: 5
   jumpForce: 300
@@ -322,6 +328,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3477459699411729558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2841547766438956892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8775f2547bffe9047bc7d02348f3bb72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NoteParent: {fileID: 0}
+  NoteText: {fileID: 0}
+  NoteButton1: {fileID: 0}
+  typingSpeed: 0.05
+  TurnSpeed: 2
+  playerController: {fileID: 8767167820065371449}
+  cinemachineCamera: {fileID: 0}
+--- !u!114 &7379354905493494727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2841547766438956892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28221525c718a464c8f18e8dbe9442d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnNoteCollected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: NoteUI, Assembly-CSharp
+        m_MethodName: UpdateNoteText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8212928943225458908
 GameObject:
   m_ObjectHideFlags: 0

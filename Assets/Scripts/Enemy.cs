@@ -24,7 +24,6 @@ public class Enemy : MonoBehaviour
     public bool isDead;
     public static event Action OnEnemyDeath;
 
-
     public void TakeDamage(int damage)
     {
         Debug.Log("Damage taken");
@@ -65,57 +64,15 @@ public class Enemy : MonoBehaviour
         
     }
     */
-    public void DealDamage(Transform camPos, Transform player)
+    public void DealDamage()
     {
-        if(attackNum == 0)
+        if (HealthBar.health > 0)
         {
             attackNum = RandomNum();
-        }
-        if (isWaiting)
-        {
-            switch (attackNum)
-            {
-                case 1:
-                    AttackWaitTime = 1.017f;
-                    break;
-                case 2:
-                    AttackWaitTime = 3.367f;
-                    break;
-                case 3:
-                    AttackWaitTime = 4.617f;
-                    break;
-            }
-            Debug.Log("Wait: " + AttackWaitTime);
-            /*
-            foreach(KeyValuePair<int, int> vals in attackWaitTimes)
-            {
-                if(attackNum == vals.Key)
-                {
-                    AttackWaitTime = vals.Value;
-                }
-            }
-            */
-            
-            currentAttackWaitTime += Time.deltaTime;
-            if(currentAttackWaitTime >= AttackWaitTime)
-            {
-                isWaiting = false;
-                EnemyAnimator.SetBool("isAttacking", true);
-                EnemyAnimator.SetInteger("randomAttackIndex", attackNum);
-                attackNum = 0;
-                currentAttackWaitTime = 0f;
-                AudioManager.Singleton.PlaySoundEffect("ZombieAttack");
-            }
-        }
-        else
-        {
-            if(HealthBar.health > 0)
-            {
-                AudioManager.Singleton.PlaySoundEffect("Hurt");
-                HealthBar.health -= damage;
-                isWaiting = true;
-            }
-            
+            EnemyAnimator.SetInteger("randomAttackIndex", attackNum);
+            AudioManager.Singleton.PlaySoundEffect("ZombieAttack");
+            AudioManager.Singleton.PlaySoundEffect("Hurt");
+            HealthBar.health -= damage;
         }
     }
 
@@ -139,7 +96,7 @@ public class Enemy : MonoBehaviour
 
     private int RandomNum()
     {
-        int num = UnityEngine.Random.Range(0,4);
+        int num = UnityEngine.Random.Range(1,4);
         return num;
     }
 }

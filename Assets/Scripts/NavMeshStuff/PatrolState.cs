@@ -17,6 +17,7 @@ public class PatrolState : IState
     {
         Debug.Log("Animation Patrolling");
         aiController.agent.speed = 1;
+        aiController.agent.SetDestination(patrolPoint);
     }
 
     public void Execute()
@@ -30,7 +31,7 @@ public class PatrolState : IState
             }
         }
         */
-        aiController.agent.SetDestination(patrolPoint);
+        
     }
 
     public void Exit()

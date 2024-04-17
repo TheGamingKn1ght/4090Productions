@@ -28,6 +28,10 @@ public class CraftingStation : AbstractInteractable
         {
             UIManager.Singleton.PauseGame();
         }
+        else
+        {
+            UIManager.Singleton.ResumeGame();
+        }
     }
 
     public override void Interact()
@@ -51,7 +55,7 @@ public class CraftingStation : AbstractInteractable
             currentRecipe.Potion.count++;
         }
     }
-
+    /*
     public void Resume()
     {
         CraftingPanel.SetActive(false);
@@ -71,7 +75,7 @@ public class CraftingStation : AbstractInteractable
         cinemachineCamera.enabled = false;
         Debug.Log("the game is paused!!!");
     }
-
+    */
         void Update()
     {
         /*

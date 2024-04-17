@@ -7,22 +7,25 @@ public class NavMeshTracking : MonoBehaviour
 {
     [SerializeField] public NavMeshAgent agent;
     [SerializeField] public Transform enemyEyes;
-    [SerializeField] public Transform target;
     [SerializeField] private int maxWalkRadius = 10;
     [SerializeField] private SphereCollider EnemySphereCollider;
     [SerializeField] private CapsuleCollider CloseUpCollider;
-    
-    
+    public Transform target;
+
+    [SerializeField] private float attackDistanceMargin;
+
     private StateMachine stateMachine;
     public Vector3 waypoint;
     public Vector3 finalPosition;
     public bool canSeePlayer;
     private float attackDistance;
-    
+    private float positionDistance;
+
 
     public void Start()
     {
         stateMachine = new StateMachine();
+        target = FindAnyObjectByType<PlayerController>().transform;
         finalPosition = GetWaypoint();
         stateMachine.changeState(new PatrolState(this,finalPosition));
 
@@ -37,32 +40,43 @@ public class NavMeshTracking : MonoBehaviour
 
     public void HandleTransition()
     {
-        if (canSeePlayer == true)
+        
+        if (canSeePlayer == true && stateMachine.currentState is PatrolState)
         {
             stateMachine.changeState(new ChaseState(this));
+            Debug.Log(stateMachine.currentState);
         }
         
         if (stateMachine.currentState is ChaseState)
         {
             attackDistance = Vector3.Distance(agent.transform.position, target.transform.position);
-            if (attackDistance <= 1)
+            if (attackDistance <= attackDistanceMargin)
             {
                 //Debug.Log(attackDistance);
                 stateMachine.changeState(new AttackState(this));
+                Debug.Log(stateMachine.currentState);
             }
         }
-        else
+        else if (stateMachine.currentState is AttackState)
         {
-            if(transform.position == finalPosition)
+            attackDistance = Vector3.Distance(agent.transform.position, target.transform.position);
+            if (attackDistance > attackDistanceMargin+0.5)
+            {
+                stateMachine.changeState(new ChaseState(this));
+                Debug.Log(stateMachine.currentState);
+            }
+        }
+        else if(stateMachine.currentState is PatrolState)
+        {
+            positionDistance = Vector3.Distance(agent.transform.position,finalPosition);
+            if (positionDistance <= 0.6)
             {
                 finalPosition = GetWaypoint();
                 stateMachine.changeState(new PatrolState(this, finalPosition));
-            }
-            else
-            {
-                //stateMachine.currentState.Execute();
+                Debug.Log(stateMachine.currentState);
             }
         }
+        
     }
 
 
@@ -79,6 +93,7 @@ public class NavMeshTracking : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Switching to Patrol");
             canSeePlayer = false;
             //Recommence the Random pathfinding after leaving chase state
             //Would like to do this differently
@@ -96,7 +111,6 @@ public class NavMeshTracking : MonoBehaviour
 
     public Vector3 GetWaypoint()
     {
-        
         waypoint = Random.insideUnitSphere * maxWalkRadius;
         waypoint += transform.position;
         NavMeshHit hit;

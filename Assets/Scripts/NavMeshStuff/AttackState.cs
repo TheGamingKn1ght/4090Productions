@@ -16,16 +16,18 @@ public class AttackState : IState
     {
         Debug.Log("Animation Attacking");
         aiController.agent.speed = 0;
+        aiController.GetComponent<Enemy>().EnemyAnimator.SetBool("isAttacking", true);
     }
 
     public void Execute()
     {
-        aiController.agent.GetComponent<Enemy>().DealDamage(aiController.enemyEyes, aiController.target);
+        //aiController.agent.GetComponent<Enemy>().DealDamage();
     }
 
     public void Exit()
     {
         aiController.agent.speed = 3;
+        aiController.GetComponent<Enemy>().EnemyAnimator.SetBool("isAttacking", false);
     }
 
 }

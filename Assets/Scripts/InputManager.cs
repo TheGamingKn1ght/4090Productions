@@ -6,6 +6,27 @@ using System;
 
 public class InputManager : MonoBehaviour
 {
+    #region Singleton
+    public static InputManager Singleton;
+    /*
+    private void Start()
+    {
+        AudioManager.Singleton.PlaySoundEffect("Background Music");
+    }*/
+    public void Awake()
+    {
+        controls = new PlayerControls();
+        if (Singleton == null)
+        {
+            Singleton = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    #endregion
     public static PlayerControls controls;
 
     public static Vector2 movementInput;
@@ -20,10 +41,6 @@ public class InputManager : MonoBehaviour
     public static event System.Action OnSpeedInput;
     public static event System.Action OnPauseInput;
 
-    private void Awake()
-    {
-        controls = new PlayerControls();
-    }
 
     void OnEnable()
     {

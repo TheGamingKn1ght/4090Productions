@@ -44,13 +44,22 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         pauseCanvas.SetActive(!pauseCanvas.activeSelf);
+
+        if (pauseCanvas.activeSelf)
+        {
+            UIManager.Singleton.PauseGame();
+        }
+        else
+        {
+            UIManager.Singleton.ResumeGame();
+        }
     }
 
     public void GoToMainMenu(int sceneIndex)
     {
         pauseCanvas.SetActive(false);
         Time.timeScale = 1f;
-        SceneManager.LoadSceneAsync(sceneIndex);
+        SceneManager.LoadScene(sceneIndex);
     }
 
     public void Quit()

@@ -7,6 +7,7 @@ public class NoteTrigger : MonoBehaviour
 {
     [SerializeField] private List<NoteString> NoteStrings = new List<NoteString>();
     [SerializeField] private Transform NPCTransform;
+    [SerializeField] private GameObject cureSmoke;
     [SerializeField] private GameObject Note;
 
     private bool hadSpooken = false;
@@ -24,7 +25,7 @@ public class NoteTrigger : MonoBehaviour
 
             if(noteInventory != null)
             {
-                noteInventory.NotesCollected();
+                noteInventory.NotesCollected(cureSmoke);
                 gameObject.SetActive(false);
             }
         }
