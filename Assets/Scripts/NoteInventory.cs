@@ -11,7 +11,7 @@ public class NoteInventory : MonoBehaviour
     public void NotesCollected(GameObject cureButton)
     {
         NumberOfNotes++;
-        if(NumberOfNotes == 1)
+        if(NumberOfNotes == 11)
         {
             AllNotesCollected(cureButton);
         }

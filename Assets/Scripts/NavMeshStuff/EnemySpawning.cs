@@ -45,7 +45,6 @@ public class EnemySpawning : MonoBehaviour
                     enemyList.Add(enemyPrefab);
                     currentEnemyCount++;
                     StartCoroutine(SpawnAnotherEnemy());
-                    break;
                 }
             }
         }

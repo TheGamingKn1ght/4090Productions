@@ -223,7 +223,7 @@ public class PlayerController : MonoBehaviour
     }
     private void ActivateCure()
     {
-        if(NoteInventory.NumberOfNotes == 1)
+        if(NoteInventory.NumberOfNotes == 11)
         {
             cureSmoke.SetActive(true);
             EnemySpawning.cureDiscovered = true;
