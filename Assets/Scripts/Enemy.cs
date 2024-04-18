@@ -21,8 +21,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] public Animator EnemyAnimator;
     [SerializeField] public MeshCollider BodyCollider;
 
+    public static event Action OnEnemyDeath;
     public bool isDead;
-    [SerializeField] private GameObject enemyPrefab;
 
     public void TakeDamage(int damage)
     {
@@ -85,7 +85,7 @@ public class Enemy : MonoBehaviour
         EnemyAnimator.SetBool("isDead", true);
         this.isDead = true;
         StartCoroutine(DestroyBodyTimer());
-        EnemySpawning.currentEnemyCount--;
+        OnEnemyDeath?.Invoke();
     }
 
     IEnumerator DestroyBodyTimer()

@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        else if(crowbarWaiting == false)
+        else 
         {
             if (Crowbar.activeSelf)
             {
@@ -226,6 +226,7 @@ public class PlayerController : MonoBehaviour
         if(NoteInventory.NumberOfNotes == 1)
         {
             cureSmoke.SetActive(true);
+            EnemySpawning.cureDiscovered = true;
         }
         
     }
