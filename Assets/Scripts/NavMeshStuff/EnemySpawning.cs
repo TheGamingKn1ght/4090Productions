@@ -6,21 +6,12 @@ using UnityEngine.AI;
 public class EnemySpawning : MonoBehaviour
 {
     [SerializeField] private int maxEnemyCount = 60;
-    private static int currentEnemyCount;
+    public static int currentEnemyCount;
     [SerializeField] GameObject enemyPrefab;
 
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
     [SerializeField] private List<GameObject> enemyList = new List<GameObject>();
 
-    private void OnEnable()
-    {
-        Enemy.OnEnemyDeath += KillEnemy;
-    }
-
-    private void OnDisable()
-    {
-        Enemy.OnEnemyDeath -= KillEnemy;
-    }
     private void Start()
     {
         currentEnemyCount = 0;
@@ -38,11 +29,6 @@ public class EnemySpawning : MonoBehaviour
                 StartCoroutine(SpawnAnotherEnemy());
             }
         }
-    }
-
-    private void KillEnemy()
-    {
-        currentEnemyCount--;
     }
 
     IEnumerator SpawnAnotherEnemy()

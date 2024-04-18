@@ -116,6 +116,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cure"",
+                    ""type"": ""Button"",
+                    ""id"": ""62871024-eea1-4408-9cb4-1852a8eaf89c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -415,6 +424,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e3b275a4-6090-4adf-8b0b-f430868162d4"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cure"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -433,6 +453,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Heal = m_Player.FindAction("Heal", throwIfNotFound: true);
         m_Player_Speed = m_Player.FindAction("Speed", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_Cure = m_Player.FindAction("Cure", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -504,6 +525,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Heal;
     private readonly InputAction m_Player_Speed;
     private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_Cure;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -518,6 +540,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Heal => m_Wrapper.m_Player_Heal;
         public InputAction @Speed => m_Wrapper.m_Player_Speed;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @Cure => m_Wrapper.m_Player_Cure;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -557,6 +580,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @Cure.started += instance.OnCure;
+            @Cure.performed += instance.OnCure;
+            @Cure.canceled += instance.OnCure;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -591,6 +617,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @Cure.started -= instance.OnCure;
+            @Cure.performed -= instance.OnCure;
+            @Cure.canceled -= instance.OnCure;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -620,5 +649,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnHeal(InputAction.CallbackContext context);
         void OnSpeed(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnCure(InputAction.CallbackContext context);
     }
 }

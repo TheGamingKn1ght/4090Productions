@@ -40,7 +40,7 @@ public class InputManager : MonoBehaviour
     public static event System.Action OnHealInput;
     public static event System.Action OnSpeedInput;
     public static event System.Action OnPauseInput;
-
+    public static event System.Action OnCureInput;
 
     void OnEnable()
     {
@@ -59,6 +59,7 @@ public class InputManager : MonoBehaviour
         
         controls.Player.Heal.performed += ctx => OnHealInput?.Invoke();
         controls.Player.Speed.performed += ctx => OnSpeedInput?.Invoke();
+        controls.Player.Cure.performed += ctx => OnCureInput?.Invoke();
 
         controls.Player.Pause.performed += ctx => OnPauseInput?.Invoke();
 

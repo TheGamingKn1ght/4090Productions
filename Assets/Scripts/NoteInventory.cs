@@ -5,21 +5,21 @@ using UnityEngine.Events;
 
 public class NoteInventory : MonoBehaviour
 {
-    public int NumberOfNotes { get; private set; }
+    public static int NumberOfNotes { get; private set; }
     public UnityEvent<NoteInventory> OnNoteCollected;
 
-    public void NotesCollected(GameObject cureSmoke)
+    public void NotesCollected(GameObject cureButton)
     {
         NumberOfNotes++;
-        if(NumberOfNotes == 11)
+        if(NumberOfNotes == 1)
         {
-            AllNotesCollected(cureSmoke);
+            AllNotesCollected(cureButton);
         }
         OnNoteCollected.Invoke(this);
     }
 
-    public void AllNotesCollected(GameObject cureSmoke)
+    public void AllNotesCollected(GameObject cureButton)
     {
-        cureSmoke.SetActive(true);
+        cureButton.SetActive(true);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int jumpForce = 300;
 
     [SerializeField] Transform orientationCam;
+    [SerializeField] private GameObject cureSmoke;
 
     [SerializeField] private GameObject QuadVideoPlayer;
     [SerializeField] private GameObject FadePlayer;
@@ -36,6 +38,9 @@ public class PlayerController : MonoBehaviour
     private float footstepsWaitTime = 0f;
     private bool isWalking;
 
+    private int currentBullets;
+    [SerializeField] private TextMeshProUGUI ammoCount;
+
     Vector3 playerPos;
     Vector3 playerPos2;
 
@@ -46,6 +51,7 @@ public class PlayerController : MonoBehaviour
         InputManager.OnScrollInput += Scroll;
         InputManager.OnHealInput += Heal;
         InputManager.OnSpeedInput += Speed;
+        InputManager.OnCureInput += ActivateCure;
     }
 
     private void OnDisable()
@@ -55,6 +61,7 @@ public class PlayerController : MonoBehaviour
         InputManager.OnScrollInput -= Scroll;
         InputManager.OnHealInput -= Heal;
         InputManager.OnSpeedInput -= Speed;
+        InputManager.OnSpeedInput -= ActivateCure;
     }
 
     // Start is called before the first frame update
@@ -63,6 +70,7 @@ public class PlayerController : MonoBehaviour
         playerPos = this.transform.position;
         //caching
         rb = GetComponent<Rigidbody>();
+        currentBullets = 50;
     }
 
     // Update is called once per frame
@@ -74,11 +82,13 @@ public class PlayerController : MonoBehaviour
         rb.velocity = movement;
 
         walkingSound();
+        ammoCount.text = currentBullets.ToString();
 
         if (HealthBar.health == 0 && isDead == false)
         {
             Death();
         }
+
     }
 
     private void Jump()
@@ -97,7 +107,7 @@ public class PlayerController : MonoBehaviour
     
     private void Attack()
     {
-        if (Pistol.activeSelf)
+        if (Pistol.activeSelf && currentBullets > 0 && Cursor.visible == false)
         {
             if (Pistol != null)
             {
@@ -109,7 +119,7 @@ public class PlayerController : MonoBehaviour
                 if (Physics.Raycast(ray, out hit, gunRange))
                 {
                     Debug.Log(hit.transform.gameObject.name);
-
+                    currentBullets--;
                     Enemy enemy = hit.transform.GetComponent<Enemy>();
                     if (enemy != null)
                     {
@@ -118,7 +128,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        else
+        else if(crowbarWaiting == false)
         {
             if (Crowbar.activeSelf)
             {
@@ -126,22 +136,11 @@ public class PlayerController : MonoBehaviour
                 AudioManager.Singleton.PlaySoundEffect("Crowbar");
                 Debug.Log("Crowbar");
                 RaycastHit hit;
-
-                /*if (Physics.Raycast(orientationCam.transform.position, orientationCam.transform.forward, out hit, meleeRange))
-                {
-                    Enemy enemy = hit.transform.GetComponent<Enemy>();
-                    if (enemy != null)
-                    {
-                        enemy.TakeDamage(35);
-                    }
-                }*/
-
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
                 if (Physics.Raycast(ray, out hit, meleeRange))
                 {
                     Debug.Log(hit.transform.gameObject.name);
-
                     Enemy enemy = hit.transform.GetComponent<Enemy>();
                     if (enemy != null)
                     {
@@ -219,8 +218,16 @@ public class PlayerController : MonoBehaviour
         if (PlayerInventory.singleton.allPotions[1].count > 0)
         {
             PlayerInventory.singleton.allPotions[1].count--;
-            StartCoroutine(SpeedBoostCoroutine());
+            StartCoroutine(SpeedBoostCoroutine(5f));
         }
+    }
+    private void ActivateCure()
+    {
+        if(NoteInventory.NumberOfNotes == 1)
+        {
+            cureSmoke.SetActive(true);
+        }
+        
     }
 
     public void Death()
@@ -249,10 +256,10 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    IEnumerator SpeedBoostCoroutine()
+    IEnumerator SpeedBoostCoroutine(float amount)
     {
         moveSpeed = 12;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(amount);
         moveSpeed = 5;
     }
 

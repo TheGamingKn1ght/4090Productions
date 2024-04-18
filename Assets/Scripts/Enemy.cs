@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] public MeshCollider BodyCollider;
 
     public bool isDead;
-    public static event Action OnEnemyDeath;
+    [SerializeField] private GameObject enemyPrefab;
 
     public void TakeDamage(int damage)
     {
@@ -78,13 +78,14 @@ public class Enemy : MonoBehaviour
     public void Death()
     {
         BodyCollider.isTrigger = true;
+        this.GetComponent<SphereCollider>().isTrigger = true;
         agent.SetDestination(this.transform.position);
         agent.isStopped = true;
         agent.speed = 0;
         EnemyAnimator.SetBool("isDead", true);
         this.isDead = true;
         StartCoroutine(DestroyBodyTimer());
-        OnEnemyDeath?.Invoke();
+        EnemySpawning.currentEnemyCount--;
     }
 
     IEnumerator DestroyBodyTimer()

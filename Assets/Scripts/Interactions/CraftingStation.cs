@@ -16,6 +16,7 @@ public class CraftingStation : AbstractInteractable
     public static RecipeSO currentRecipe;
 
     [SerializeField] PlayerController playerController;
+    [SerializeField] public GameObject CureIcon;
 
     public void ToggleCrafting()
     {
@@ -55,6 +56,20 @@ public class CraftingStation : AbstractInteractable
             currentRecipe.Potion.count++;
         }
     }
+
+    public void BrewCure()
+    {
+        CureIcon.SetActive(true);
+        /*
+        if (currentRecipe.ingredients[0].count >= 1 && currentRecipe.ingredients[1].count >= 1)
+        {
+            Debug.Log("Brewing");
+            currentRecipe.ingredients[0].count--;
+            currentRecipe.ingredients[1].count--;
+            currentRecipe.Potion.count++;
+        }
+        */
+    }
     /*
     public void Resume()
     {
@@ -76,7 +91,7 @@ public class CraftingStation : AbstractInteractable
         Debug.Log("the game is paused!!!");
     }
     */
-        void Update()
+    void Update()
     {
         /*
         if(CraftingPanel.activeInHierarchy)

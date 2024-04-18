@@ -13,8 +13,8 @@ public class NoteUI : MonoBehaviour
         NoteTextUI = GetComponent<TextMeshProUGUI>();
     }
 
-    public void UpdateNoteText(NoteInventory noteInventory)
+    public void UpdateNoteText()
     {
-        NoteTextUI.text = noteInventory.NumberOfNotes.ToString();
+        NoteTextUI.text = NoteInventory.NumberOfNotes.ToString();
     }
 }
